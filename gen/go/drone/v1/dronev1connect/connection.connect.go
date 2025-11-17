@@ -33,6 +33,9 @@ const (
 // reflection-formatted method names, remove the leading slash and convert the remaining slash to a
 // period.
 const (
+	// ConnectionServiceListDronesProcedure is the fully-qualified name of the ConnectionService's
+	// ListDrones RPC.
+	ConnectionServiceListDronesProcedure = "/drone.v1.ConnectionService/ListDrones"
 	// ConnectionServiceConnectProcedure is the fully-qualified name of the ConnectionService's Connect
 	// RPC.
 	ConnectionServiceConnectProcedure = "/drone.v1.ConnectionService/Connect"
@@ -42,30 +45,27 @@ const (
 	// ConnectionServiceGetStatusProcedure is the fully-qualified name of the ConnectionService's
 	// GetStatus RPC.
 	ConnectionServiceGetStatusProcedure = "/drone.v1.ConnectionService/GetStatus"
-	// ConnectionServiceListDronesProcedure is the fully-qualified name of the ConnectionService's
-	// ListDrones RPC.
-	ConnectionServiceListDronesProcedure = "/drone.v1.ConnectionService/ListDrones"
 )
 
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
 var (
 	connectionServiceServiceDescriptor          = v1.File_drone_v1_connection_proto.Services().ByName("ConnectionService")
+	connectionServiceListDronesMethodDescriptor = connectionServiceServiceDescriptor.Methods().ByName("ListDrones")
 	connectionServiceConnectMethodDescriptor    = connectionServiceServiceDescriptor.Methods().ByName("Connect")
 	connectionServiceDisconnectMethodDescriptor = connectionServiceServiceDescriptor.Methods().ByName("Disconnect")
 	connectionServiceGetStatusMethodDescriptor  = connectionServiceServiceDescriptor.Methods().ByName("GetStatus")
-	connectionServiceListDronesMethodDescriptor = connectionServiceServiceDescriptor.Methods().ByName("ListDrones")
 )
 
 // ConnectionServiceClient is a client for the drone.v1.ConnectionService service.
 type ConnectionServiceClient interface {
-	// Connect to a drone by ID
-	Connect(context.Context, *connect.Request[v1.ConnectRequest]) (*connect.Response[v1.ConnectResponse], error)
-	// Disconnect from the current drone
-	Disconnect(context.Context, *connect.Request[v1.DisconnectRequest]) (*connect.Response[v1.DisconnectResponse], error)
-	// Get current connection status
-	GetStatus(context.Context, *connect.Request[v1.GetStatusRequest]) (*connect.Response[v1.GetStatusResponse], error)
-	// List all available drones
+	// List all drones in registry
 	ListDrones(context.Context, *connect.Request[v1.ListDronesRequest]) (*connect.Response[v1.ListDronesResponse], error)
+	// Connect to a drone
+	Connect(context.Context, *connect.Request[v1.ConnectRequest]) (*connect.Response[v1.ConnectResponse], error)
+	// Disconnect from a drone
+	Disconnect(context.Context, *connect.Request[v1.DisconnectRequest]) (*connect.Response[v1.DisconnectResponse], error)
+	// Get status of a drone
+	GetStatus(context.Context, *connect.Request[v1.GetStatusRequest]) (*connect.Response[v1.GetStatusResponse], error)
 }
 
 // NewConnectionServiceClient constructs a client for the drone.v1.ConnectionService service. By
@@ -78,6 +78,12 @@ type ConnectionServiceClient interface {
 func NewConnectionServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) ConnectionServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
 	return &connectionServiceClient{
+		listDrones: connect.NewClient[v1.ListDronesRequest, v1.ListDronesResponse](
+			httpClient,
+			baseURL+ConnectionServiceListDronesProcedure,
+			connect.WithSchema(connectionServiceListDronesMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
 		connect: connect.NewClient[v1.ConnectRequest, v1.ConnectResponse](
 			httpClient,
 			baseURL+ConnectionServiceConnectProcedure,
@@ -96,21 +102,20 @@ func NewConnectionServiceClient(httpClient connect.HTTPClient, baseURL string, o
 			connect.WithSchema(connectionServiceGetStatusMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
-		listDrones: connect.NewClient[v1.ListDronesRequest, v1.ListDronesResponse](
-			httpClient,
-			baseURL+ConnectionServiceListDronesProcedure,
-			connect.WithSchema(connectionServiceListDronesMethodDescriptor),
-			connect.WithClientOptions(opts...),
-		),
 	}
 }
 
 // connectionServiceClient implements ConnectionServiceClient.
 type connectionServiceClient struct {
+	listDrones *connect.Client[v1.ListDronesRequest, v1.ListDronesResponse]
 	connect    *connect.Client[v1.ConnectRequest, v1.ConnectResponse]
 	disconnect *connect.Client[v1.DisconnectRequest, v1.DisconnectResponse]
 	getStatus  *connect.Client[v1.GetStatusRequest, v1.GetStatusResponse]
-	listDrones *connect.Client[v1.ListDronesRequest, v1.ListDronesResponse]
+}
+
+// ListDrones calls drone.v1.ConnectionService.ListDrones.
+func (c *connectionServiceClient) ListDrones(ctx context.Context, req *connect.Request[v1.ListDronesRequest]) (*connect.Response[v1.ListDronesResponse], error) {
+	return c.listDrones.CallUnary(ctx, req)
 }
 
 // Connect calls drone.v1.ConnectionService.Connect.
@@ -128,21 +133,16 @@ func (c *connectionServiceClient) GetStatus(ctx context.Context, req *connect.Re
 	return c.getStatus.CallUnary(ctx, req)
 }
 
-// ListDrones calls drone.v1.ConnectionService.ListDrones.
-func (c *connectionServiceClient) ListDrones(ctx context.Context, req *connect.Request[v1.ListDronesRequest]) (*connect.Response[v1.ListDronesResponse], error) {
-	return c.listDrones.CallUnary(ctx, req)
-}
-
 // ConnectionServiceHandler is an implementation of the drone.v1.ConnectionService service.
 type ConnectionServiceHandler interface {
-	// Connect to a drone by ID
-	Connect(context.Context, *connect.Request[v1.ConnectRequest]) (*connect.Response[v1.ConnectResponse], error)
-	// Disconnect from the current drone
-	Disconnect(context.Context, *connect.Request[v1.DisconnectRequest]) (*connect.Response[v1.DisconnectResponse], error)
-	// Get current connection status
-	GetStatus(context.Context, *connect.Request[v1.GetStatusRequest]) (*connect.Response[v1.GetStatusResponse], error)
-	// List all available drones
+	// List all drones in registry
 	ListDrones(context.Context, *connect.Request[v1.ListDronesRequest]) (*connect.Response[v1.ListDronesResponse], error)
+	// Connect to a drone
+	Connect(context.Context, *connect.Request[v1.ConnectRequest]) (*connect.Response[v1.ConnectResponse], error)
+	// Disconnect from a drone
+	Disconnect(context.Context, *connect.Request[v1.DisconnectRequest]) (*connect.Response[v1.DisconnectResponse], error)
+	// Get status of a drone
+	GetStatus(context.Context, *connect.Request[v1.GetStatusRequest]) (*connect.Response[v1.GetStatusResponse], error)
 }
 
 // NewConnectionServiceHandler builds an HTTP handler from the service implementation. It returns
@@ -151,6 +151,12 @@ type ConnectionServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewConnectionServiceHandler(svc ConnectionServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	connectionServiceListDronesHandler := connect.NewUnaryHandler(
+		ConnectionServiceListDronesProcedure,
+		svc.ListDrones,
+		connect.WithSchema(connectionServiceListDronesMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
 	connectionServiceConnectHandler := connect.NewUnaryHandler(
 		ConnectionServiceConnectProcedure,
 		svc.Connect,
@@ -169,22 +175,16 @@ func NewConnectionServiceHandler(svc ConnectionServiceHandler, opts ...connect.H
 		connect.WithSchema(connectionServiceGetStatusMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
-	connectionServiceListDronesHandler := connect.NewUnaryHandler(
-		ConnectionServiceListDronesProcedure,
-		svc.ListDrones,
-		connect.WithSchema(connectionServiceListDronesMethodDescriptor),
-		connect.WithHandlerOptions(opts...),
-	)
 	return "/drone.v1.ConnectionService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
+		case ConnectionServiceListDronesProcedure:
+			connectionServiceListDronesHandler.ServeHTTP(w, r)
 		case ConnectionServiceConnectProcedure:
 			connectionServiceConnectHandler.ServeHTTP(w, r)
 		case ConnectionServiceDisconnectProcedure:
 			connectionServiceDisconnectHandler.ServeHTTP(w, r)
 		case ConnectionServiceGetStatusProcedure:
 			connectionServiceGetStatusHandler.ServeHTTP(w, r)
-		case ConnectionServiceListDronesProcedure:
-			connectionServiceListDronesHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -193,6 +193,10 @@ func NewConnectionServiceHandler(svc ConnectionServiceHandler, opts ...connect.H
 
 // UnimplementedConnectionServiceHandler returns CodeUnimplemented from all methods.
 type UnimplementedConnectionServiceHandler struct{}
+
+func (UnimplementedConnectionServiceHandler) ListDrones(context.Context, *connect.Request[v1.ListDronesRequest]) (*connect.Response[v1.ListDronesResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("drone.v1.ConnectionService.ListDrones is not implemented"))
+}
 
 func (UnimplementedConnectionServiceHandler) Connect(context.Context, *connect.Request[v1.ConnectRequest]) (*connect.Response[v1.ConnectResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("drone.v1.ConnectionService.Connect is not implemented"))
@@ -204,8 +208,4 @@ func (UnimplementedConnectionServiceHandler) Disconnect(context.Context, *connec
 
 func (UnimplementedConnectionServiceHandler) GetStatus(context.Context, *connect.Request[v1.GetStatusRequest]) (*connect.Response[v1.GetStatusResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("drone.v1.ConnectionService.GetStatus is not implemented"))
-}
-
-func (UnimplementedConnectionServiceHandler) ListDrones(context.Context, *connect.Request[v1.ListDronesRequest]) (*connect.Response[v1.ListDronesResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("drone.v1.ConnectionService.ListDrones is not implemented"))
 }

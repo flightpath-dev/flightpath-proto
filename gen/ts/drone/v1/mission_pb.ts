@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file drone/v1/mission.proto.
  */
 export const file_drone_v1_mission: GenFile = /*@__PURE__*/
-  fileDesc("ChZkcm9uZS92MS9taXNzaW9uLnByb3RvEghkcm9uZS52MSK/AgoIV2F5cG9pbnQSEAoIc2VxdWVuY2UYASABKAUSJAoIcG9zaXRpb24YAiABKAsyEi5kcm9uZS52MS5Qb3NpdGlvbhIpCgZhY3Rpb24YAyABKA4yGS5kcm9uZS52MS5XYXlwb2ludC5BY3Rpb24SDQoFc3BlZWQYBCABKAESDwoHaGVhZGluZxgFIAEoARIVCg1ob2xkX3RpbWVfc2VjGAYgASgFEhkKEWFjY2VwdGFuY2VfcmFkaXVzGAcgASgBIn4KBkFjdGlvbhIWChJBQ1RJT05fVU5TUEVDSUZJRUQQABITCg9BQ1RJT05fV0FZUE9JTlQQARIPCgtBQ1RJT05fSE9MRBACEg8KC0FDVElPTl9MQU5EEAMSEgoOQUNUSU9OX1RBS0VPRkYQBBIRCg1BQ1RJT05fTE9JVEVSEAUihwEKB01pc3Npb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIlCgl3YXlwb2ludHMYBCADKAsyEi5kcm9uZS52MS5XYXlwb2ludBISCgpjcmVhdGVkX2F0GAogASgDEhIKCnVwZGF0ZWRfYXQYCyABKAMiOgoUVXBsb2FkTWlzc2lvblJlcXVlc3QSIgoHbWlzc2lvbhgBIAEoCzIRLmRyb25lLnYxLk1pc3Npb24iVQoVVXBsb2FkTWlzc2lvblJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIaChJ3YXlwb2ludHNfdXBsb2FkZWQYAyABKAUiGAoWRG93bmxvYWRNaXNzaW9uUmVxdWVzdCJfChdEb3dubG9hZE1pc3Npb25SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSIgoHbWlzc2lvbhgDIAEoCzIRLmRyb25lLnYxLk1pc3Npb24iFQoTU3RhcnRNaXNzaW9uUmVxdWVzdCI4ChRTdGFydE1pc3Npb25SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkiFQoTUGF1c2VNaXNzaW9uUmVxdWVzdCI4ChRQYXVzZU1pc3Npb25SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkiFgoUUmVzdW1lTWlzc2lvblJlcXVlc3QiOQoVUmVzdW1lTWlzc2lvblJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSIVChNDbGVhck1pc3Npb25SZXF1ZXN0IjgKFENsZWFyTWlzc2lvblJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSIUChJHZXRQcm9ncmVzc1JlcXVlc3QixgIKE0dldFByb2dyZXNzUmVzcG9uc2USNAoGc3RhdHVzGAEgASgOMiQuZHJvbmUudjEuR2V0UHJvZ3Jlc3NSZXNwb25zZS5TdGF0dXMSGAoQY3VycmVudF93YXlwb2ludBgCIAEoBRIXCg90b3RhbF93YXlwb2ludHMYAyABKAUSHAoUZGlzdGFuY2VfdG9fd2F5cG9pbnQYBCABKAESIAoYZXN0aW1hdGVkX3RpbWVfcmVtYWluaW5nGAUgASgBIoUBCgZTdGF0dXMSFgoSU1RBVFVTX1VOU1BFQ0lGSUVEEAASDwoLU1RBVFVTX0lETEUQARIWChJTVEFUVVNfSU5fUFJPR1JFU1MQAhIRCg1TVEFUVVNfUEFVU0VEEAMSFAoQU1RBVFVTX0NPTVBMRVRFRBAEEhEKDVNUQVRVU19GQUlMRUQQBSIsChVTdHJlYW1Qcm9ncmVzc1JlcXVlc3QSEwoLaW50ZXJ2YWxfbXMYASABKAUizAIKFlN0cmVhbVByb2dyZXNzUmVzcG9uc2USNwoGc3RhdHVzGAEgASgOMicuZHJvbmUudjEuU3RyZWFtUHJvZ3Jlc3NSZXNwb25zZS5TdGF0dXMSGAoQY3VycmVudF93YXlwb2ludBgCIAEoBRIXCg90b3RhbF93YXlwb2ludHMYAyABKAUSHAoUZGlzdGFuY2VfdG9fd2F5cG9pbnQYBCABKAESIAoYZXN0aW1hdGVkX3RpbWVfcmVtYWluaW5nGAUgASgBIoUBCgZTdGF0dXMSFgoSU1RBVFVTX1VOU1BFQ0lGSUVEEAASDwoLU1RBVFVTX0lETEUQARIWChJTVEFUVVNfSU5fUFJPR1JFU1MQAhIRCg1TVEFUVVNfUEFVU0VEEAMSFAoQU1RBVFVTX0NPTVBMRVRFRBAEEhEKDVNUQVRVU19GQUlMRUQQBTKcBQoOTWlzc2lvblNlcnZpY2USUAoNVXBsb2FkTWlzc2lvbhIeLmRyb25lLnYxLlVwbG9hZE1pc3Npb25SZXF1ZXN0Gh8uZHJvbmUudjEuVXBsb2FkTWlzc2lvblJlc3BvbnNlElYKD0Rvd25sb2FkTWlzc2lvbhIgLmRyb25lLnYxLkRvd25sb2FkTWlzc2lvblJlcXVlc3QaIS5kcm9uZS52MS5Eb3dubG9hZE1pc3Npb25SZXNwb25zZRJNCgxTdGFydE1pc3Npb24SHS5kcm9uZS52MS5TdGFydE1pc3Npb25SZXF1ZXN0Gh4uZHJvbmUudjEuU3RhcnRNaXNzaW9uUmVzcG9uc2USTQoMUGF1c2VNaXNzaW9uEh0uZHJvbmUudjEuUGF1c2VNaXNzaW9uUmVxdWVzdBoeLmRyb25lLnYxLlBhdXNlTWlzc2lvblJlc3BvbnNlElAKDVJlc3VtZU1pc3Npb24SHi5kcm9uZS52MS5SZXN1bWVNaXNzaW9uUmVxdWVzdBofLmRyb25lLnYxLlJlc3VtZU1pc3Npb25SZXNwb25zZRJNCgxDbGVhck1pc3Npb24SHS5kcm9uZS52MS5DbGVhck1pc3Npb25SZXF1ZXN0Gh4uZHJvbmUudjEuQ2xlYXJNaXNzaW9uUmVzcG9uc2USSgoLR2V0UHJvZ3Jlc3MSHC5kcm9uZS52MS5HZXRQcm9ncmVzc1JlcXVlc3QaHS5kcm9uZS52MS5HZXRQcm9ncmVzc1Jlc3BvbnNlElUKDlN0cmVhbVByb2dyZXNzEh8uZHJvbmUudjEuU3RyZWFtUHJvZ3Jlc3NSZXF1ZXN0GiAuZHJvbmUudjEuU3RyZWFtUHJvZ3Jlc3NSZXNwb25zZTABQkRaQmdpdGh1Yi5jb20vZmxpZ2h0cGF0aC1kZXYvZmxpZ2h0cGF0aC1wcm90by9nZW4vZ28vZHJvbmUvdjE7ZHJvbmV2MWIGcHJvdG8z", [file_drone_v1_types]);
+  fileDesc("ChZkcm9uZS92MS9taXNzaW9uLnByb3RvEghkcm9uZS52MSK/AgoIV2F5cG9pbnQSEAoIc2VxdWVuY2UYASABKAUSJAoIcG9zaXRpb24YAiABKAsyEi5kcm9uZS52MS5Qb3NpdGlvbhIpCgZhY3Rpb24YAyABKA4yGS5kcm9uZS52MS5XYXlwb2ludC5BY3Rpb24SDQoFc3BlZWQYBCABKAESDwoHaGVhZGluZxgFIAEoARIVCg1ob2xkX3RpbWVfc2VjGAYgASgFEhkKEWFjY2VwdGFuY2VfcmFkaXVzGAcgASgBIn4KBkFjdGlvbhIWChJBQ1RJT05fVU5TUEVDSUZJRUQQABITCg9BQ1RJT05fV0FZUE9JTlQQARIPCgtBQ1RJT05fSE9MRBACEg8KC0FDVElPTl9MQU5EEAMSEgoOQUNUSU9OX1RBS0VPRkYQBBIRCg1BQ1RJT05fTE9JVEVSEAUihwEKB01pc3Npb24SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIlCgl3YXlwb2ludHMYBCADKAsyEi5kcm9uZS52MS5XYXlwb2ludBISCgpjcmVhdGVkX2F0GAogASgDEhIKCnVwZGF0ZWRfYXQYCyABKAMiTAoUVXBsb2FkTWlzc2lvblJlcXVlc3QSEAoIZHJvbmVfaWQYASABKAkSIgoHbWlzc2lvbhgCIAEoCzIRLmRyb25lLnYxLk1pc3Npb24iVQoVVXBsb2FkTWlzc2lvblJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIaChJ3YXlwb2ludHNfdXBsb2FkZWQYAyABKAUiKgoWRG93bmxvYWRNaXNzaW9uUmVxdWVzdBIQCghkcm9uZV9pZBgBIAEoCSJfChdEb3dubG9hZE1pc3Npb25SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSIgoHbWlzc2lvbhgDIAEoCzIRLmRyb25lLnYxLk1pc3Npb24iJwoTU3RhcnRNaXNzaW9uUmVxdWVzdBIQCghkcm9uZV9pZBgBIAEoCSI4ChRTdGFydE1pc3Npb25SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkiJwoTUGF1c2VNaXNzaW9uUmVxdWVzdBIQCghkcm9uZV9pZBgBIAEoCSI4ChRQYXVzZU1pc3Npb25SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkiKAoUUmVzdW1lTWlzc2lvblJlcXVlc3QSEAoIZHJvbmVfaWQYASABKAkiOQoVUmVzdW1lTWlzc2lvblJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSInChNDbGVhck1pc3Npb25SZXF1ZXN0EhAKCGRyb25lX2lkGAEgASgJIjgKFENsZWFyTWlzc2lvblJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSImChJHZXRQcm9ncmVzc1JlcXVlc3QSEAoIZHJvbmVfaWQYASABKAkixgIKE0dldFByb2dyZXNzUmVzcG9uc2USNAoGc3RhdHVzGAEgASgOMiQuZHJvbmUudjEuR2V0UHJvZ3Jlc3NSZXNwb25zZS5TdGF0dXMSGAoQY3VycmVudF93YXlwb2ludBgCIAEoBRIXCg90b3RhbF93YXlwb2ludHMYAyABKAUSHAoUZGlzdGFuY2VfdG9fd2F5cG9pbnQYBCABKAESIAoYZXN0aW1hdGVkX3RpbWVfcmVtYWluaW5nGAUgASgBIoUBCgZTdGF0dXMSFgoSU1RBVFVTX1VOU1BFQ0lGSUVEEAASDwoLU1RBVFVTX0lETEUQARIWChJTVEFUVVNfSU5fUFJPR1JFU1MQAhIRCg1TVEFUVVNfUEFVU0VEEAMSFAoQU1RBVFVTX0NPTVBMRVRFRBAEEhEKDVNUQVRVU19GQUlMRUQQBSI+ChVTdHJlYW1Qcm9ncmVzc1JlcXVlc3QSEAoIZHJvbmVfaWQYASABKAkSEwoLaW50ZXJ2YWxfbXMYAiABKAUizAIKFlN0cmVhbVByb2dyZXNzUmVzcG9uc2USNwoGc3RhdHVzGAEgASgOMicuZHJvbmUudjEuU3RyZWFtUHJvZ3Jlc3NSZXNwb25zZS5TdGF0dXMSGAoQY3VycmVudF93YXlwb2ludBgCIAEoBRIXCg90b3RhbF93YXlwb2ludHMYAyABKAUSHAoUZGlzdGFuY2VfdG9fd2F5cG9pbnQYBCABKAESIAoYZXN0aW1hdGVkX3RpbWVfcmVtYWluaW5nGAUgASgBIoUBCgZTdGF0dXMSFgoSU1RBVFVTX1VOU1BFQ0lGSUVEEAASDwoLU1RBVFVTX0lETEUQARIWChJTVEFUVVNfSU5fUFJPR1JFU1MQAhIRCg1TVEFUVVNfUEFVU0VEEAMSFAoQU1RBVFVTX0NPTVBMRVRFRBAEEhEKDVNUQVRVU19GQUlMRUQQBTKcBQoOTWlzc2lvblNlcnZpY2USUAoNVXBsb2FkTWlzc2lvbhIeLmRyb25lLnYxLlVwbG9hZE1pc3Npb25SZXF1ZXN0Gh8uZHJvbmUudjEuVXBsb2FkTWlzc2lvblJlc3BvbnNlElYKD0Rvd25sb2FkTWlzc2lvbhIgLmRyb25lLnYxLkRvd25sb2FkTWlzc2lvblJlcXVlc3QaIS5kcm9uZS52MS5Eb3dubG9hZE1pc3Npb25SZXNwb25zZRJNCgxTdGFydE1pc3Npb24SHS5kcm9uZS52MS5TdGFydE1pc3Npb25SZXF1ZXN0Gh4uZHJvbmUudjEuU3RhcnRNaXNzaW9uUmVzcG9uc2USTQoMUGF1c2VNaXNzaW9uEh0uZHJvbmUudjEuUGF1c2VNaXNzaW9uUmVxdWVzdBoeLmRyb25lLnYxLlBhdXNlTWlzc2lvblJlc3BvbnNlElAKDVJlc3VtZU1pc3Npb24SHi5kcm9uZS52MS5SZXN1bWVNaXNzaW9uUmVxdWVzdBofLmRyb25lLnYxLlJlc3VtZU1pc3Npb25SZXNwb25zZRJNCgxDbGVhck1pc3Npb24SHS5kcm9uZS52MS5DbGVhck1pc3Npb25SZXF1ZXN0Gh4uZHJvbmUudjEuQ2xlYXJNaXNzaW9uUmVzcG9uc2USSgoLR2V0UHJvZ3Jlc3MSHC5kcm9uZS52MS5HZXRQcm9ncmVzc1JlcXVlc3QaHS5kcm9uZS52MS5HZXRQcm9ncmVzc1Jlc3BvbnNlElUKDlN0cmVhbVByb2dyZXNzEh8uZHJvbmUudjEuU3RyZWFtUHJvZ3Jlc3NSZXF1ZXN0GiAuZHJvbmUudjEuU3RyZWFtUHJvZ3Jlc3NSZXNwb25zZTABQkRaQmdpdGh1Yi5jb20vZmxpZ2h0cGF0aC1kZXYvZmxpZ2h0cGF0aC1wcm90by9nZW4vZ28vZHJvbmUvdjE7ZHJvbmV2MWIGcHJvdG8z", [file_drone_v1_types]);
 
 /**
  * @generated from message drone.v1.Waypoint
@@ -167,7 +167,14 @@ export const MissionSchema: GenMessage<Mission> = /*@__PURE__*/
  */
 export type UploadMissionRequest = Message<"drone.v1.UploadMissionRequest"> & {
   /**
-   * @generated from field: drone.v1.Mission mission = 1;
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
+
+  /**
+   * @generated from field: drone.v1.Mission mission = 2;
    */
   mission?: Mission;
 };
@@ -207,11 +214,15 @@ export const UploadMissionResponseSchema: GenMessage<UploadMissionResponse> = /*
   messageDesc(file_drone_v1_mission, 3);
 
 /**
- * Empty - downloads current mission
- *
  * @generated from message drone.v1.DownloadMissionRequest
  */
 export type DownloadMissionRequest = Message<"drone.v1.DownloadMissionRequest"> & {
+  /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
 };
 
 /**
@@ -249,11 +260,15 @@ export const DownloadMissionResponseSchema: GenMessage<DownloadMissionResponse> 
   messageDesc(file_drone_v1_mission, 5);
 
 /**
- * Empty - starts uploaded mission
- *
  * @generated from message drone.v1.StartMissionRequest
  */
 export type StartMissionRequest = Message<"drone.v1.StartMissionRequest"> & {
+  /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
 };
 
 /**
@@ -286,11 +301,15 @@ export const StartMissionResponseSchema: GenMessage<StartMissionResponse> = /*@_
   messageDesc(file_drone_v1_mission, 7);
 
 /**
- * Empty - pauses at current waypoint
- *
  * @generated from message drone.v1.PauseMissionRequest
  */
 export type PauseMissionRequest = Message<"drone.v1.PauseMissionRequest"> & {
+  /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
 };
 
 /**
@@ -323,11 +342,15 @@ export const PauseMissionResponseSchema: GenMessage<PauseMissionResponse> = /*@_
   messageDesc(file_drone_v1_mission, 9);
 
 /**
- * Empty - resumes from current waypoint
- *
  * @generated from message drone.v1.ResumeMissionRequest
  */
 export type ResumeMissionRequest = Message<"drone.v1.ResumeMissionRequest"> & {
+  /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
 };
 
 /**
@@ -360,11 +383,15 @@ export const ResumeMissionResponseSchema: GenMessage<ResumeMissionResponse> = /*
   messageDesc(file_drone_v1_mission, 11);
 
 /**
- * Empty - clears uploaded mission
- *
  * @generated from message drone.v1.ClearMissionRequest
  */
 export type ClearMissionRequest = Message<"drone.v1.ClearMissionRequest"> & {
+  /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
 };
 
 /**
@@ -397,11 +424,15 @@ export const ClearMissionResponseSchema: GenMessage<ClearMissionResponse> = /*@_
   messageDesc(file_drone_v1_mission, 13);
 
 /**
- * Empty - gets current progress
- *
  * @generated from message drone.v1.GetProgressRequest
  */
 export type GetProgressRequest = Message<"drone.v1.GetProgressRequest"> & {
+  /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
 };
 
 /**
@@ -498,9 +529,16 @@ export const GetProgressResponse_StatusSchema: GenEnum<GetProgressResponse_Statu
  */
 export type StreamProgressRequest = Message<"drone.v1.StreamProgressRequest"> & {
   /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
+
+  /**
    * Update interval
    *
-   * @generated from field: int32 interval_ms = 1;
+   * @generated from field: int32 interval_ms = 2;
    */
   intervalMs: number;
 };

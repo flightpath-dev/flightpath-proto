@@ -28,13 +28,11 @@ service ControlService {
   
   // Go to specific position
   rpc GoToPosition(GoToPositionRequest) returns (GoToPositionResponse);
-  
-  // Emergency stop
-  rpc EmergencyStop(EmergencyStopRequest) returns (EmergencyStopResponse);
 }
 
 message ArmRequest {
-  bool force = 1;  // Skip pre-arm checks (use with caution)
+  string drone_id = 1;   // Required: Drone identifier from registry
+  bool force = 2;        // Skip pre-arm checks (use with caution)
 }
 
 message ArmResponse {
@@ -43,7 +41,8 @@ message ArmResponse {
 }
 
 message DisarmRequest {
-  bool force = 1;  // Force disarm even in flight (dangerous!)
+  string drone_id = 1;   // Required: Drone identifier from registry
+  bool force = 2;        // Force disarm even in flight (dangerous!)
 }
 
 message DisarmResponse {
@@ -52,7 +51,8 @@ message DisarmResponse {
 }
 
 message SetFlightModeRequest {
-  FlightMode mode = 1;
+  string drone_id = 1;   // Required: Drone identifier from registry
+  FlightMode mode = 2;
 }
 
 message SetFlightModeResponse {
@@ -62,7 +62,8 @@ message SetFlightModeResponse {
 }
 
 message TakeoffRequest {
-  double altitude = 1;  // Target altitude in meters
+  string drone_id = 1;   // Required: Drone identifier from registry
+  double altitude = 2;   // Target altitude in meters
 }
 
 message TakeoffResponse {
@@ -71,7 +72,8 @@ message TakeoffResponse {
 }
 
 message LandRequest {
-  Position target = 1;  // Optional: specific landing location
+  string drone_id = 1;   // Required: Drone identifier from registry
+  Position target = 2;   // Optional: specific landing location
 }
 
 message LandResponse {
@@ -80,7 +82,8 @@ message LandResponse {
 }
 
 message ReturnHomeRequest {
-  double altitude = 1;  // Optional: altitude for return flight
+  string drone_id = 1;   // Required: Drone identifier from registry
+  double altitude = 2;   // Optional: altitude for return flight
 }
 
 message ReturnHomeResponse {
@@ -90,9 +93,10 @@ message ReturnHomeResponse {
 }
 
 message GoToPositionRequest {
-  Position target = 1;
-  double speed = 2;       // Optional: speed in m/s
-  double heading = 3;     // Optional: desired heading in degrees
+  string drone_id = 1;   // Required: Drone identifier from registry
+  Position target = 2;
+  double speed = 3;      // Optional: speed in m/s
+  double heading = 4;    // Optional: desired heading in degrees
 }
 
 message GoToPositionResponse {
@@ -100,13 +104,4 @@ message GoToPositionResponse {
   string message = 2;
   double distance_m = 3;           // Distance to target
   double estimated_time_sec = 4;   // Estimated time to reach
-}
-
-message EmergencyStopRequest {
-  // Empty - immediately stops all motors (drone will fall!)
-}
-
-message EmergencyStopResponse {
-  bool success = 1;
-  string message = 2;
 }

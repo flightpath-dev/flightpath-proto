@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ArmRequest, ArmResponse, DisarmRequest, DisarmResponse, EmergencyStopRequest, EmergencyStopResponse, GoToPositionRequest, GoToPositionResponse, LandRequest, LandResponse, ReturnHomeRequest, ReturnHomeResponse, SetFlightModeRequest, SetFlightModeResponse, TakeoffRequest, TakeoffResponse } from "./control_pb.js";
+import { ArmRequest, ArmResponse, DisarmRequest, DisarmResponse, GoToPositionRequest, GoToPositionResponse, LandRequest, LandResponse, ReturnHomeRequest, ReturnHomeResponse, SetFlightModeRequest, SetFlightModeResponse, TakeoffRequest, TakeoffResponse } from "./control_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -89,17 +89,6 @@ export const ControlService = {
       name: "GoToPosition",
       I: GoToPositionRequest,
       O: GoToPositionResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Emergency stop
-     *
-     * @generated from rpc drone.v1.ControlService.EmergencyStop
-     */
-    emergencyStop: {
-      name: "EmergencyStop",
-      I: EmergencyStopRequest,
-      O: EmergencyStopResponse,
       kind: MethodKind.Unary,
     },
   }

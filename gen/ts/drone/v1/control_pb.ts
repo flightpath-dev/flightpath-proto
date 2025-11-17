@@ -12,16 +12,23 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file drone/v1/control.proto.
  */
 export const file_drone_v1_control: GenFile = /*@__PURE__*/
-  fileDesc("ChZkcm9uZS92MS9jb250cm9sLnByb3RvEghkcm9uZS52MSIbCgpBcm1SZXF1ZXN0Eg0KBWZvcmNlGAEgASgIIi8KC0FybVJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSIeCg1EaXNhcm1SZXF1ZXN0Eg0KBWZvcmNlGAEgASgIIjIKDkRpc2FybVJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSI6ChRTZXRGbGlnaHRNb2RlUmVxdWVzdBIiCgRtb2RlGAEgASgOMhQuZHJvbmUudjEuRmxpZ2h0TW9kZSJlChVTZXRGbGlnaHRNb2RlUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJEioKDGN1cnJlbnRfbW9kZRgDIAEoDjIULmRyb25lLnYxLkZsaWdodE1vZGUiIgoOVGFrZW9mZlJlcXVlc3QSEAoIYWx0aXR1ZGUYASABKAEiMwoPVGFrZW9mZlJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSIxCgtMYW5kUmVxdWVzdBIiCgZ0YXJnZXQYASABKAsyEi5kcm9uZS52MS5Qb3NpdGlvbiIwCgxMYW5kUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJIiUKEVJldHVybkhvbWVSZXF1ZXN0EhAKCGFsdGl0dWRlGAEgASgBImEKElJldHVybkhvbWVSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSKQoNaG9tZV9wb3NpdGlvbhgDIAEoCzISLmRyb25lLnYxLlBvc2l0aW9uIlkKE0dvVG9Qb3NpdGlvblJlcXVlc3QSIgoGdGFyZ2V0GAEgASgLMhIuZHJvbmUudjEuUG9zaXRpb24SDQoFc3BlZWQYAiABKAESDwoHaGVhZGluZxgDIAEoASJoChRHb1RvUG9zaXRpb25SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSEgoKZGlzdGFuY2VfbRgDIAEoARIaChJlc3RpbWF0ZWRfdGltZV9zZWMYBCABKAEiFgoURW1lcmdlbmN5U3RvcFJlcXVlc3QiOQoVRW1lcmdlbmN5U3RvcFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCTK0BAoOQ29udHJvbFNlcnZpY2USMgoDQXJtEhQuZHJvbmUudjEuQXJtUmVxdWVzdBoVLmRyb25lLnYxLkFybVJlc3BvbnNlEjsKBkRpc2FybRIXLmRyb25lLnYxLkRpc2FybVJlcXVlc3QaGC5kcm9uZS52MS5EaXNhcm1SZXNwb25zZRJQCg1TZXRGbGlnaHRNb2RlEh4uZHJvbmUudjEuU2V0RmxpZ2h0TW9kZVJlcXVlc3QaHy5kcm9uZS52MS5TZXRGbGlnaHRNb2RlUmVzcG9uc2USPgoHVGFrZW9mZhIYLmRyb25lLnYxLlRha2VvZmZSZXF1ZXN0GhkuZHJvbmUudjEuVGFrZW9mZlJlc3BvbnNlEjUKBExhbmQSFS5kcm9uZS52MS5MYW5kUmVxdWVzdBoWLmRyb25lLnYxLkxhbmRSZXNwb25zZRJHCgpSZXR1cm5Ib21lEhsuZHJvbmUudjEuUmV0dXJuSG9tZVJlcXVlc3QaHC5kcm9uZS52MS5SZXR1cm5Ib21lUmVzcG9uc2USTQoMR29Ub1Bvc2l0aW9uEh0uZHJvbmUudjEuR29Ub1Bvc2l0aW9uUmVxdWVzdBoeLmRyb25lLnYxLkdvVG9Qb3NpdGlvblJlc3BvbnNlElAKDUVtZXJnZW5jeVN0b3ASHi5kcm9uZS52MS5FbWVyZ2VuY3lTdG9wUmVxdWVzdBofLmRyb25lLnYxLkVtZXJnZW5jeVN0b3BSZXNwb25zZUJEWkJnaXRodWIuY29tL2ZsaWdodHBhdGgtZGV2L2ZsaWdodHBhdGgtcHJvdG8vZ2VuL2dvL2Ryb25lL3YxO2Ryb25ldjFiBnByb3RvMw", [file_drone_v1_types]);
+  fileDesc("ChZkcm9uZS92MS9jb250cm9sLnByb3RvEghkcm9uZS52MSItCgpBcm1SZXF1ZXN0EhAKCGRyb25lX2lkGAEgASgJEg0KBWZvcmNlGAIgASgIIi8KC0FybVJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSIwCg1EaXNhcm1SZXF1ZXN0EhAKCGRyb25lX2lkGAEgASgJEg0KBWZvcmNlGAIgASgIIjIKDkRpc2FybVJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSJMChRTZXRGbGlnaHRNb2RlUmVxdWVzdBIQCghkcm9uZV9pZBgBIAEoCRIiCgRtb2RlGAIgASgOMhQuZHJvbmUudjEuRmxpZ2h0TW9kZSJlChVTZXRGbGlnaHRNb2RlUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJEioKDGN1cnJlbnRfbW9kZRgDIAEoDjIULmRyb25lLnYxLkZsaWdodE1vZGUiNAoOVGFrZW9mZlJlcXVlc3QSEAoIZHJvbmVfaWQYASABKAkSEAoIYWx0aXR1ZGUYAiABKAEiMwoPVGFrZW9mZlJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSJDCgtMYW5kUmVxdWVzdBIQCghkcm9uZV9pZBgBIAEoCRIiCgZ0YXJnZXQYAiABKAsyEi5kcm9uZS52MS5Qb3NpdGlvbiIwCgxMYW5kUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJIjcKEVJldHVybkhvbWVSZXF1ZXN0EhAKCGRyb25lX2lkGAEgASgJEhAKCGFsdGl0dWRlGAIgASgBImEKElJldHVybkhvbWVSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSKQoNaG9tZV9wb3NpdGlvbhgDIAEoCzISLmRyb25lLnYxLlBvc2l0aW9uImsKE0dvVG9Qb3NpdGlvblJlcXVlc3QSEAoIZHJvbmVfaWQYASABKAkSIgoGdGFyZ2V0GAIgASgLMhIuZHJvbmUudjEuUG9zaXRpb24SDQoFc3BlZWQYAyABKAESDwoHaGVhZGluZxgEIAEoASJoChRHb1RvUG9zaXRpb25SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSEgoKZGlzdGFuY2VfbRgDIAEoARIaChJlc3RpbWF0ZWRfdGltZV9zZWMYBCABKAEy4gMKDkNvbnRyb2xTZXJ2aWNlEjIKA0FybRIULmRyb25lLnYxLkFybVJlcXVlc3QaFS5kcm9uZS52MS5Bcm1SZXNwb25zZRI7CgZEaXNhcm0SFy5kcm9uZS52MS5EaXNhcm1SZXF1ZXN0GhguZHJvbmUudjEuRGlzYXJtUmVzcG9uc2USUAoNU2V0RmxpZ2h0TW9kZRIeLmRyb25lLnYxLlNldEZsaWdodE1vZGVSZXF1ZXN0Gh8uZHJvbmUudjEuU2V0RmxpZ2h0TW9kZVJlc3BvbnNlEj4KB1Rha2VvZmYSGC5kcm9uZS52MS5UYWtlb2ZmUmVxdWVzdBoZLmRyb25lLnYxLlRha2VvZmZSZXNwb25zZRI1CgRMYW5kEhUuZHJvbmUudjEuTGFuZFJlcXVlc3QaFi5kcm9uZS52MS5MYW5kUmVzcG9uc2USRwoKUmV0dXJuSG9tZRIbLmRyb25lLnYxLlJldHVybkhvbWVSZXF1ZXN0GhwuZHJvbmUudjEuUmV0dXJuSG9tZVJlc3BvbnNlEk0KDEdvVG9Qb3NpdGlvbhIdLmRyb25lLnYxLkdvVG9Qb3NpdGlvblJlcXVlc3QaHi5kcm9uZS52MS5Hb1RvUG9zaXRpb25SZXNwb25zZUJEWkJnaXRodWIuY29tL2ZsaWdodHBhdGgtZGV2L2ZsaWdodHBhdGgtcHJvdG8vZ2VuL2dvL2Ryb25lL3YxO2Ryb25ldjFiBnByb3RvMw", [file_drone_v1_types]);
 
 /**
  * @generated from message drone.v1.ArmRequest
  */
 export type ArmRequest = Message<"drone.v1.ArmRequest"> & {
   /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
+
+  /**
    * Skip pre-arm checks (use with caution)
    *
-   * @generated from field: bool force = 1;
+   * @generated from field: bool force = 2;
    */
   force: boolean;
 };
@@ -60,9 +67,16 @@ export const ArmResponseSchema: GenMessage<ArmResponse> = /*@__PURE__*/
  */
 export type DisarmRequest = Message<"drone.v1.DisarmRequest"> & {
   /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
+
+  /**
    * Force disarm even in flight (dangerous!)
    *
-   * @generated from field: bool force = 1;
+   * @generated from field: bool force = 2;
    */
   force: boolean;
 };
@@ -101,7 +115,14 @@ export const DisarmResponseSchema: GenMessage<DisarmResponse> = /*@__PURE__*/
  */
 export type SetFlightModeRequest = Message<"drone.v1.SetFlightModeRequest"> & {
   /**
-   * @generated from field: drone.v1.FlightMode mode = 1;
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
+
+  /**
+   * @generated from field: drone.v1.FlightMode mode = 2;
    */
   mode: FlightMode;
 };
@@ -145,9 +166,16 @@ export const SetFlightModeResponseSchema: GenMessage<SetFlightModeResponse> = /*
  */
 export type TakeoffRequest = Message<"drone.v1.TakeoffRequest"> & {
   /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
+
+  /**
    * Target altitude in meters
    *
-   * @generated from field: double altitude = 1;
+   * @generated from field: double altitude = 2;
    */
   altitude: number;
 };
@@ -186,9 +214,16 @@ export const TakeoffResponseSchema: GenMessage<TakeoffResponse> = /*@__PURE__*/
  */
 export type LandRequest = Message<"drone.v1.LandRequest"> & {
   /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
+
+  /**
    * Optional: specific landing location
    *
-   * @generated from field: drone.v1.Position target = 1;
+   * @generated from field: drone.v1.Position target = 2;
    */
   target?: Position;
 };
@@ -227,9 +262,16 @@ export const LandResponseSchema: GenMessage<LandResponse> = /*@__PURE__*/
  */
 export type ReturnHomeRequest = Message<"drone.v1.ReturnHomeRequest"> & {
   /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
+
+  /**
    * Optional: altitude for return flight
    *
-   * @generated from field: double altitude = 1;
+   * @generated from field: double altitude = 2;
    */
   altitude: number;
 };
@@ -273,21 +315,28 @@ export const ReturnHomeResponseSchema: GenMessage<ReturnHomeResponse> = /*@__PUR
  */
 export type GoToPositionRequest = Message<"drone.v1.GoToPositionRequest"> & {
   /**
-   * @generated from field: drone.v1.Position target = 1;
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
+
+  /**
+   * @generated from field: drone.v1.Position target = 2;
    */
   target?: Position;
 
   /**
    * Optional: speed in m/s
    *
-   * @generated from field: double speed = 2;
+   * @generated from field: double speed = 3;
    */
   speed: number;
 
   /**
    * Optional: desired heading in degrees
    *
-   * @generated from field: double heading = 3;
+   * @generated from field: double heading = 4;
    */
   heading: number;
 };
@@ -334,43 +383,6 @@ export type GoToPositionResponse = Message<"drone.v1.GoToPositionResponse"> & {
  */
 export const GoToPositionResponseSchema: GenMessage<GoToPositionResponse> = /*@__PURE__*/
   messageDesc(file_drone_v1_control, 13);
-
-/**
- * Empty - immediately stops all motors (drone will fall!)
- *
- * @generated from message drone.v1.EmergencyStopRequest
- */
-export type EmergencyStopRequest = Message<"drone.v1.EmergencyStopRequest"> & {
-};
-
-/**
- * Describes the message drone.v1.EmergencyStopRequest.
- * Use `create(EmergencyStopRequestSchema)` to create a new message.
- */
-export const EmergencyStopRequestSchema: GenMessage<EmergencyStopRequest> = /*@__PURE__*/
-  messageDesc(file_drone_v1_control, 14);
-
-/**
- * @generated from message drone.v1.EmergencyStopResponse
- */
-export type EmergencyStopResponse = Message<"drone.v1.EmergencyStopResponse"> & {
-  /**
-   * @generated from field: bool success = 1;
-   */
-  success: boolean;
-
-  /**
-   * @generated from field: string message = 2;
-   */
-  message: string;
-};
-
-/**
- * Describes the message drone.v1.EmergencyStopResponse.
- * Use `create(EmergencyStopResponseSchema)` to create a new message.
- */
-export const EmergencyStopResponseSchema: GenMessage<EmergencyStopResponse> = /*@__PURE__*/
-  messageDesc(file_drone_v1_control, 15);
 
 /**
  * ControlService handles flight control commands
@@ -447,16 +459,6 @@ export const ControlService: GenService<{
     methodKind: "unary";
     input: typeof GoToPositionRequestSchema;
     output: typeof GoToPositionResponseSchema;
-  },
-  /**
-   * Emergency stop
-   *
-   * @generated from rpc drone.v1.ControlService.EmergencyStop
-   */
-  emergencyStop: {
-    methodKind: "unary";
-    input: typeof EmergencyStopRequestSchema;
-    output: typeof EmergencyStopResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_drone_v1_control, 0);

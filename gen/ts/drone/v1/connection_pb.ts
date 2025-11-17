@@ -12,7 +12,39 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file drone/v1/connection.proto.
  */
 export const file_drone_v1_connection: GenFile = /*@__PURE__*/
-  fileDesc("Chlkcm9uZS92MS9jb25uZWN0aW9uLnByb3RvEghkcm9uZS52MSKnAQoOQ29ubmVjdFJlcXVlc3QSEAoIZHJvbmVfaWQYASABKAkSEgoKdGltZW91dF9tcxgCIAEoBRI8CgpwYXJhbWV0ZXJzGAMgAygLMiguZHJvbmUudjEuQ29ubmVjdFJlcXVlc3QuUGFyYW1ldGVyc0VudHJ5GjEKD1BhcmFtZXRlcnNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIt0BCg9Db25uZWN0UmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJEhAKCGRyb25lX2lkGAMgASgJEhIKCmRyb25lX25hbWUYBCABKAkSFAoMbWFudWZhY3R1cmVyGAUgASgJEg0KBW1vZGVsGAYgASgJEhUKDXNlcmlhbF9udW1iZXIYByABKAkSGAoQZmlybXdhcmVfdmVyc2lvbhgIIAEoCRIsCgxjYXBhYmlsaXRpZXMYCSABKAsyFi5kcm9uZS52MS5DYXBhYmlsaXRpZXMiEwoRRGlzY29ubmVjdFJlcXVlc3QiNgoSRGlzY29ubmVjdFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSISChBHZXRTdGF0dXNSZXF1ZXN0IssBChFHZXRTdGF0dXNSZXNwb25zZRIRCgljb25uZWN0ZWQYASABKAgSDQoFYXJtZWQYAiABKAgSKgoMY3VycmVudF9tb2RlGAMgASgOMhQuZHJvbmUudjEuRmxpZ2h0TW9kZRImCgZoZWFsdGgYBCABKAsyFi5kcm9uZS52MS5TeXN0ZW1IZWFsdGgSEQoJdXB0aW1lX21zGAogASgDEhcKD2xhc3RfbWVzc2FnZV9tcxgLIAEoAxIUCgxsaW5rX3F1YWxpdHkYDCABKAEiEwoRTGlzdERyb25lc1JlcXVlc3QiOQoSTGlzdERyb25lc1Jlc3BvbnNlEiMKBmRyb25lcxgBIAMoCzITLmRyb25lLnYxLkRyb25lSW5mbyJfCglEcm9uZUluZm8SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIQCghwcm90b2NvbBgEIAEoCRIRCglhdmFpbGFibGUYBSABKAgyqwIKEUNvbm5lY3Rpb25TZXJ2aWNlEj4KB0Nvbm5lY3QSGC5kcm9uZS52MS5Db25uZWN0UmVxdWVzdBoZLmRyb25lLnYxLkNvbm5lY3RSZXNwb25zZRJHCgpEaXNjb25uZWN0EhsuZHJvbmUudjEuRGlzY29ubmVjdFJlcXVlc3QaHC5kcm9uZS52MS5EaXNjb25uZWN0UmVzcG9uc2USRAoJR2V0U3RhdHVzEhouZHJvbmUudjEuR2V0U3RhdHVzUmVxdWVzdBobLmRyb25lLnYxLkdldFN0YXR1c1Jlc3BvbnNlEkcKCkxpc3REcm9uZXMSGy5kcm9uZS52MS5MaXN0RHJvbmVzUmVxdWVzdBocLmRyb25lLnYxLkxpc3REcm9uZXNSZXNwb25zZUJEWkJnaXRodWIuY29tL2ZsaWdodHBhdGgtZGV2L2ZsaWdodHBhdGgtcHJvdG8vZ2VuL2dvL2Ryb25lL3YxO2Ryb25ldjFiBnByb3RvMw", [file_drone_v1_types]);
+  fileDesc("Chlkcm9uZS92MS9jb25uZWN0aW9uLnByb3RvEghkcm9uZS52MSITChFMaXN0RHJvbmVzUmVxdWVzdCI5ChJMaXN0RHJvbmVzUmVzcG9uc2USIwoGZHJvbmVzGAEgAygLMhMuZHJvbmUudjEuRHJvbmVJbmZvIjYKDkNvbm5lY3RSZXF1ZXN0EhAKCGRyb25lX2lkGAEgASgJEhIKCnRpbWVvdXRfbXMYAiABKAUi3QEKD0Nvbm5lY3RSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSEAoIZHJvbmVfaWQYAyABKAkSEgoKZHJvbmVfbmFtZRgEIAEoCRIUCgxtYW51ZmFjdHVyZXIYBSABKAkSDQoFbW9kZWwYBiABKAkSFQoNc2VyaWFsX251bWJlchgHIAEoCRIYChBmaXJtd2FyZV92ZXJzaW9uGAggASgJEiwKDGNhcGFiaWxpdGllcxgJIAEoCzIWLmRyb25lLnYxLkNhcGFiaWxpdGllcyIlChFEaXNjb25uZWN0UmVxdWVzdBIQCghkcm9uZV9pZBgBIAEoCSI2ChJEaXNjb25uZWN0UmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJIiQKEEdldFN0YXR1c1JlcXVlc3QSEAoIZHJvbmVfaWQYASABKAkiywEKEUdldFN0YXR1c1Jlc3BvbnNlEhEKCWNvbm5lY3RlZBgBIAEoCBINCgVhcm1lZBgCIAEoCBIqCgxjdXJyZW50X21vZGUYAyABKA4yFC5kcm9uZS52MS5GbGlnaHRNb2RlEiYKBmhlYWx0aBgEIAEoCzIWLmRyb25lLnYxLlN5c3RlbUhlYWx0aBIRCgl1cHRpbWVfbXMYCiABKAMSFwoPbGFzdF9tZXNzYWdlX21zGAsgASgDEhQKDGxpbmtfcXVhbGl0eRgMIAEoASJfCglEcm9uZUluZm8SCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIQCghwcm90b2NvbBgEIAEoCRIRCglhdmFpbGFibGUYBSABKAgyqwIKEUNvbm5lY3Rpb25TZXJ2aWNlEkcKCkxpc3REcm9uZXMSGy5kcm9uZS52MS5MaXN0RHJvbmVzUmVxdWVzdBocLmRyb25lLnYxLkxpc3REcm9uZXNSZXNwb25zZRI+CgdDb25uZWN0EhguZHJvbmUudjEuQ29ubmVjdFJlcXVlc3QaGS5kcm9uZS52MS5Db25uZWN0UmVzcG9uc2USRwoKRGlzY29ubmVjdBIbLmRyb25lLnYxLkRpc2Nvbm5lY3RSZXF1ZXN0GhwuZHJvbmUudjEuRGlzY29ubmVjdFJlc3BvbnNlEkQKCUdldFN0YXR1cxIaLmRyb25lLnYxLkdldFN0YXR1c1JlcXVlc3QaGy5kcm9uZS52MS5HZXRTdGF0dXNSZXNwb25zZUJEWkJnaXRodWIuY29tL2ZsaWdodHBhdGgtZGV2L2ZsaWdodHBhdGgtcHJvdG8vZ2VuL2dvL2Ryb25lL3YxO2Ryb25ldjFiBnByb3RvMw", [file_drone_v1_types]);
+
+/**
+ * Empty - lists all drones in registry
+ *
+ * @generated from message drone.v1.ListDronesRequest
+ */
+export type ListDronesRequest = Message<"drone.v1.ListDronesRequest"> & {
+};
+
+/**
+ * Describes the message drone.v1.ListDronesRequest.
+ * Use `create(ListDronesRequestSchema)` to create a new message.
+ */
+export const ListDronesRequestSchema: GenMessage<ListDronesRequest> = /*@__PURE__*/
+  messageDesc(file_drone_v1_connection, 0);
+
+/**
+ * @generated from message drone.v1.ListDronesResponse
+ */
+export type ListDronesResponse = Message<"drone.v1.ListDronesResponse"> & {
+  /**
+   * @generated from field: repeated drone.v1.DroneInfo drones = 1;
+   */
+  drones: DroneInfo[];
+};
+
+/**
+ * Describes the message drone.v1.ListDronesResponse.
+ * Use `create(ListDronesResponseSchema)` to create a new message.
+ */
+export const ListDronesResponseSchema: GenMessage<ListDronesResponse> = /*@__PURE__*/
+  messageDesc(file_drone_v1_connection, 1);
 
 /**
  * @generated from message drone.v1.ConnectRequest
@@ -31,14 +63,6 @@ export type ConnectRequest = Message<"drone.v1.ConnectRequest"> & {
    * @generated from field: int32 timeout_ms = 2;
    */
   timeoutMs: number;
-
-  /**
-   * Optional: Override parameters (for development/testing only)
-   * Backend usually ignores this and uses registry configuration
-   *
-   * @generated from field: map<string, string> parameters = 3;
-   */
-  parameters: { [key: string]: string };
 };
 
 /**
@@ -46,7 +70,7 @@ export type ConnectRequest = Message<"drone.v1.ConnectRequest"> & {
  * Use `create(ConnectRequestSchema)` to create a new message.
  */
 export const ConnectRequestSchema: GenMessage<ConnectRequest> = /*@__PURE__*/
-  messageDesc(file_drone_v1_connection, 0);
+  messageDesc(file_drone_v1_connection, 2);
 
 /**
  * @generated from message drone.v1.ConnectResponse
@@ -105,14 +129,18 @@ export type ConnectResponse = Message<"drone.v1.ConnectResponse"> & {
  * Use `create(ConnectResponseSchema)` to create a new message.
  */
 export const ConnectResponseSchema: GenMessage<ConnectResponse> = /*@__PURE__*/
-  messageDesc(file_drone_v1_connection, 1);
+  messageDesc(file_drone_v1_connection, 3);
 
 /**
- * Empty - disconnects current drone
- *
  * @generated from message drone.v1.DisconnectRequest
  */
 export type DisconnectRequest = Message<"drone.v1.DisconnectRequest"> & {
+  /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
 };
 
 /**
@@ -120,7 +148,7 @@ export type DisconnectRequest = Message<"drone.v1.DisconnectRequest"> & {
  * Use `create(DisconnectRequestSchema)` to create a new message.
  */
 export const DisconnectRequestSchema: GenMessage<DisconnectRequest> = /*@__PURE__*/
-  messageDesc(file_drone_v1_connection, 2);
+  messageDesc(file_drone_v1_connection, 4);
 
 /**
  * @generated from message drone.v1.DisconnectResponse
@@ -142,14 +170,18 @@ export type DisconnectResponse = Message<"drone.v1.DisconnectResponse"> & {
  * Use `create(DisconnectResponseSchema)` to create a new message.
  */
 export const DisconnectResponseSchema: GenMessage<DisconnectResponse> = /*@__PURE__*/
-  messageDesc(file_drone_v1_connection, 3);
+  messageDesc(file_drone_v1_connection, 5);
 
 /**
- * Empty - gets status of current connection
- *
  * @generated from message drone.v1.GetStatusRequest
  */
 export type GetStatusRequest = Message<"drone.v1.GetStatusRequest"> & {
+  /**
+   * Required: Drone identifier from registry
+   *
+   * @generated from field: string drone_id = 1;
+   */
+  droneId: string;
 };
 
 /**
@@ -157,7 +189,7 @@ export type GetStatusRequest = Message<"drone.v1.GetStatusRequest"> & {
  * Use `create(GetStatusRequestSchema)` to create a new message.
  */
 export const GetStatusRequestSchema: GenMessage<GetStatusRequest> = /*@__PURE__*/
-  messageDesc(file_drone_v1_connection, 4);
+  messageDesc(file_drone_v1_connection, 6);
 
 /**
  * @generated from message drone.v1.GetStatusResponse
@@ -210,38 +242,6 @@ export type GetStatusResponse = Message<"drone.v1.GetStatusResponse"> & {
  * Use `create(GetStatusResponseSchema)` to create a new message.
  */
 export const GetStatusResponseSchema: GenMessage<GetStatusResponse> = /*@__PURE__*/
-  messageDesc(file_drone_v1_connection, 5);
-
-/**
- * Empty - lists all configured drones
- *
- * @generated from message drone.v1.ListDronesRequest
- */
-export type ListDronesRequest = Message<"drone.v1.ListDronesRequest"> & {
-};
-
-/**
- * Describes the message drone.v1.ListDronesRequest.
- * Use `create(ListDronesRequestSchema)` to create a new message.
- */
-export const ListDronesRequestSchema: GenMessage<ListDronesRequest> = /*@__PURE__*/
-  messageDesc(file_drone_v1_connection, 6);
-
-/**
- * @generated from message drone.v1.ListDronesResponse
- */
-export type ListDronesResponse = Message<"drone.v1.ListDronesResponse"> & {
-  /**
-   * @generated from field: repeated drone.v1.DroneInfo drones = 1;
-   */
-  drones: DroneInfo[];
-};
-
-/**
- * Describes the message drone.v1.ListDronesResponse.
- * Use `create(ListDronesResponseSchema)` to create a new message.
- */
-export const ListDronesResponseSchema: GenMessage<ListDronesResponse> = /*@__PURE__*/
   messageDesc(file_drone_v1_connection, 7);
 
 /**
@@ -290,7 +290,17 @@ export const DroneInfoSchema: GenMessage<DroneInfo> = /*@__PURE__*/
  */
 export const ConnectionService: GenService<{
   /**
-   * Connect to a drone by ID
+   * List all drones in registry
+   *
+   * @generated from rpc drone.v1.ConnectionService.ListDrones
+   */
+  listDrones: {
+    methodKind: "unary";
+    input: typeof ListDronesRequestSchema;
+    output: typeof ListDronesResponseSchema;
+  },
+  /**
+   * Connect to a drone
    *
    * @generated from rpc drone.v1.ConnectionService.Connect
    */
@@ -300,7 +310,7 @@ export const ConnectionService: GenService<{
     output: typeof ConnectResponseSchema;
   },
   /**
-   * Disconnect from the current drone
+   * Disconnect from a drone
    *
    * @generated from rpc drone.v1.ConnectionService.Disconnect
    */
@@ -310,7 +320,7 @@ export const ConnectionService: GenService<{
     output: typeof DisconnectResponseSchema;
   },
   /**
-   * Get current connection status
+   * Get status of a drone
    *
    * @generated from rpc drone.v1.ConnectionService.GetStatus
    */
@@ -318,16 +328,6 @@ export const ConnectionService: GenService<{
     methodKind: "unary";
     input: typeof GetStatusRequestSchema;
     output: typeof GetStatusResponseSchema;
-  },
-  /**
-   * List all available drones
-   *
-   * @generated from rpc drone.v1.ConnectionService.ListDrones
-   */
-  listDrones: {
-    methodKind: "unary";
-    input: typeof ListDronesRequestSchema;
-    output: typeof ListDronesResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_drone_v1_connection, 0);

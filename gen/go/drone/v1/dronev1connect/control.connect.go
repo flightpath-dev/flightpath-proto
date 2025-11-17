@@ -50,9 +50,6 @@ const (
 	// ControlServiceGoToPositionProcedure is the fully-qualified name of the ControlService's
 	// GoToPosition RPC.
 	ControlServiceGoToPositionProcedure = "/drone.v1.ControlService/GoToPosition"
-	// ControlServiceEmergencyStopProcedure is the fully-qualified name of the ControlService's
-	// EmergencyStop RPC.
-	ControlServiceEmergencyStopProcedure = "/drone.v1.ControlService/EmergencyStop"
 )
 
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
@@ -65,7 +62,6 @@ var (
 	controlServiceLandMethodDescriptor          = controlServiceServiceDescriptor.Methods().ByName("Land")
 	controlServiceReturnHomeMethodDescriptor    = controlServiceServiceDescriptor.Methods().ByName("ReturnHome")
 	controlServiceGoToPositionMethodDescriptor  = controlServiceServiceDescriptor.Methods().ByName("GoToPosition")
-	controlServiceEmergencyStopMethodDescriptor = controlServiceServiceDescriptor.Methods().ByName("EmergencyStop")
 )
 
 // ControlServiceClient is a client for the drone.v1.ControlService service.
@@ -84,8 +80,6 @@ type ControlServiceClient interface {
 	ReturnHome(context.Context, *connect.Request[v1.ReturnHomeRequest]) (*connect.Response[v1.ReturnHomeResponse], error)
 	// Go to specific position
 	GoToPosition(context.Context, *connect.Request[v1.GoToPositionRequest]) (*connect.Response[v1.GoToPositionResponse], error)
-	// Emergency stop
-	EmergencyStop(context.Context, *connect.Request[v1.EmergencyStopRequest]) (*connect.Response[v1.EmergencyStopResponse], error)
 }
 
 // NewControlServiceClient constructs a client for the drone.v1.ControlService service. By default,
@@ -140,12 +134,6 @@ func NewControlServiceClient(httpClient connect.HTTPClient, baseURL string, opts
 			connect.WithSchema(controlServiceGoToPositionMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
-		emergencyStop: connect.NewClient[v1.EmergencyStopRequest, v1.EmergencyStopResponse](
-			httpClient,
-			baseURL+ControlServiceEmergencyStopProcedure,
-			connect.WithSchema(controlServiceEmergencyStopMethodDescriptor),
-			connect.WithClientOptions(opts...),
-		),
 	}
 }
 
@@ -158,7 +146,6 @@ type controlServiceClient struct {
 	land          *connect.Client[v1.LandRequest, v1.LandResponse]
 	returnHome    *connect.Client[v1.ReturnHomeRequest, v1.ReturnHomeResponse]
 	goToPosition  *connect.Client[v1.GoToPositionRequest, v1.GoToPositionResponse]
-	emergencyStop *connect.Client[v1.EmergencyStopRequest, v1.EmergencyStopResponse]
 }
 
 // Arm calls drone.v1.ControlService.Arm.
@@ -196,11 +183,6 @@ func (c *controlServiceClient) GoToPosition(ctx context.Context, req *connect.Re
 	return c.goToPosition.CallUnary(ctx, req)
 }
 
-// EmergencyStop calls drone.v1.ControlService.EmergencyStop.
-func (c *controlServiceClient) EmergencyStop(ctx context.Context, req *connect.Request[v1.EmergencyStopRequest]) (*connect.Response[v1.EmergencyStopResponse], error) {
-	return c.emergencyStop.CallUnary(ctx, req)
-}
-
 // ControlServiceHandler is an implementation of the drone.v1.ControlService service.
 type ControlServiceHandler interface {
 	// Arm the drone
@@ -217,8 +199,6 @@ type ControlServiceHandler interface {
 	ReturnHome(context.Context, *connect.Request[v1.ReturnHomeRequest]) (*connect.Response[v1.ReturnHomeResponse], error)
 	// Go to specific position
 	GoToPosition(context.Context, *connect.Request[v1.GoToPositionRequest]) (*connect.Response[v1.GoToPositionResponse], error)
-	// Emergency stop
-	EmergencyStop(context.Context, *connect.Request[v1.EmergencyStopRequest]) (*connect.Response[v1.EmergencyStopResponse], error)
 }
 
 // NewControlServiceHandler builds an HTTP handler from the service implementation. It returns the
@@ -269,12 +249,6 @@ func NewControlServiceHandler(svc ControlServiceHandler, opts ...connect.Handler
 		connect.WithSchema(controlServiceGoToPositionMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
-	controlServiceEmergencyStopHandler := connect.NewUnaryHandler(
-		ControlServiceEmergencyStopProcedure,
-		svc.EmergencyStop,
-		connect.WithSchema(controlServiceEmergencyStopMethodDescriptor),
-		connect.WithHandlerOptions(opts...),
-	)
 	return "/drone.v1.ControlService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case ControlServiceArmProcedure:
@@ -291,8 +265,6 @@ func NewControlServiceHandler(svc ControlServiceHandler, opts ...connect.Handler
 			controlServiceReturnHomeHandler.ServeHTTP(w, r)
 		case ControlServiceGoToPositionProcedure:
 			controlServiceGoToPositionHandler.ServeHTTP(w, r)
-		case ControlServiceEmergencyStopProcedure:
-			controlServiceEmergencyStopHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -328,8 +300,4 @@ func (UnimplementedControlServiceHandler) ReturnHome(context.Context, *connect.R
 
 func (UnimplementedControlServiceHandler) GoToPosition(context.Context, *connect.Request[v1.GoToPositionRequest]) (*connect.Response[v1.GoToPositionResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("drone.v1.ControlService.GoToPosition is not implemented"))
-}
-
-func (UnimplementedControlServiceHandler) EmergencyStop(context.Context, *connect.Request[v1.EmergencyStopRequest]) (*connect.Response[v1.EmergencyStopResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("drone.v1.ControlService.EmergencyStop is not implemented"))
 }

@@ -16,7 +16,8 @@ service TelemetryService {
 }
 
 message StreamTelemetryRequest {
-  int32 rate_hz = 1;  // Desired update rate (backend decides actual rate)
+  string drone_id = 1;   // Required: Drone identifier from registry
+  int32 rate_hz = 2;     // Desired update rate (backend decides actual rate)
 }
 
 message StreamTelemetryResponse {
@@ -41,7 +42,7 @@ message StreamTelemetryResponse {
 }
 
 message GetSnapshotRequest {
-  // Empty - gets current telemetry
+  string drone_id = 1;   // Required: Drone identifier from registry
 }
 
 message GetSnapshotResponse {

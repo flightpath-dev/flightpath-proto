@@ -15,7 +15,18 @@ export const ConnectionService = {
   typeName: "drone.v1.ConnectionService",
   methods: {
     /**
-     * Connect to a drone by ID
+     * List all drones in registry
+     *
+     * @generated from rpc drone.v1.ConnectionService.ListDrones
+     */
+    listDrones: {
+      name: "ListDrones",
+      I: ListDronesRequest,
+      O: ListDronesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Connect to a drone
      *
      * @generated from rpc drone.v1.ConnectionService.Connect
      */
@@ -26,7 +37,7 @@ export const ConnectionService = {
       kind: MethodKind.Unary,
     },
     /**
-     * Disconnect from the current drone
+     * Disconnect from a drone
      *
      * @generated from rpc drone.v1.ConnectionService.Disconnect
      */
@@ -37,7 +48,7 @@ export const ConnectionService = {
       kind: MethodKind.Unary,
     },
     /**
-     * Get current connection status
+     * Get status of a drone
      *
      * @generated from rpc drone.v1.ConnectionService.GetStatus
      */
@@ -45,17 +56,6 @@ export const ConnectionService = {
       name: "GetStatus",
       I: GetStatusRequest,
       O: GetStatusResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * List all available drones
-     *
-     * @generated from rpc drone.v1.ConnectionService.ListDrones
-     */
-    listDrones: {
-      name: "ListDrones",
-      I: ListDronesRequest,
-      O: ListDronesResponse,
       kind: MethodKind.Unary,
     },
   }

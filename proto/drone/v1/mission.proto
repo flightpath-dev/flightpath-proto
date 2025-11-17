@@ -64,7 +64,8 @@ message Mission {
 }
 
 message UploadMissionRequest {
-  Mission mission = 1;
+  string drone_id = 1;   // Required: Drone identifier from registry
+  Mission mission = 2;
 }
 
 message UploadMissionResponse {
@@ -74,7 +75,7 @@ message UploadMissionResponse {
 }
 
 message DownloadMissionRequest {
-  // Empty - downloads current mission
+  string drone_id = 1;   // Required: Drone identifier from registry
 }
 
 message DownloadMissionResponse {
@@ -84,7 +85,7 @@ message DownloadMissionResponse {
 }
 
 message StartMissionRequest {
-  // Empty - starts uploaded mission
+  string drone_id = 1;   // Required: Drone identifier from registry
 }
 
 message StartMissionResponse {
@@ -93,7 +94,7 @@ message StartMissionResponse {
 }
 
 message PauseMissionRequest {
-  // Empty - pauses at current waypoint
+  string drone_id = 1;   // Required: Drone identifier from registry
 }
 
 message PauseMissionResponse {
@@ -102,7 +103,7 @@ message PauseMissionResponse {
 }
 
 message ResumeMissionRequest {
-  // Empty - resumes from current waypoint
+  string drone_id = 1;   // Required: Drone identifier from registry
 }
 
 message ResumeMissionResponse {
@@ -111,7 +112,7 @@ message ResumeMissionResponse {
 }
 
 message ClearMissionRequest {
-  // Empty - clears uploaded mission
+  string drone_id = 1;   // Required: Drone identifier from registry
 }
 
 message ClearMissionResponse {
@@ -120,7 +121,7 @@ message ClearMissionResponse {
 }
 
 message GetProgressRequest {
-  // Empty - gets current progress
+  string drone_id = 1;   // Required: Drone identifier from registry
 }
 
 message GetProgressResponse {
@@ -141,7 +142,8 @@ message GetProgressResponse {
 }
 
 message StreamProgressRequest {
-  int32 interval_ms = 1;  // Update interval
+  string drone_id = 1;   // Required: Drone identifier from registry
+  int32 interval_ms = 2;  // Update interval
 }
 
 message StreamProgressResponse {
