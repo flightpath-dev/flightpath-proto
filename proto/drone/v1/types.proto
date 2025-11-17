@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package drone.v1;
+
+option go_package = "github.com/flightpath-dev/flightpath-proto/gen/go/drone/v1;dronev1";
+
+// Position represents GPS coordinates
+message Position {
+  double latitude = 1;   // degrees
+  double longitude = 2;  // degrees
+  double altitude = 3;   // meters (MSL or AGL, protocol-specific)
+}
+
+// Velocity in local frame
+message Velocity {
+  double x = 1;  // m/s (north or forward, protocol-specific)
+  double y = 2;  // m/s (east or right, protocol-specific)
+  double z = 3;  // m/s (down or up, protocol-specific)
+}
+
+// Attitude represents orientation
+message Attitude {
+  double roll = 1;   // radians
+  double pitch = 2;  // radians
+  double yaw = 3;    // radians (heading)
+}
+
+// Battery information
+message BatteryStatus {
+  double voltage = 1;           // volts
+  double current = 2;           // amps (negative = discharging)
+  int32 percentage = 3;         // 0-100
+  int32 time_remaining_sec = 4; // -1 if unknown
+}
+
+// Generic system health
+message SystemHealth {
+  enum State {
+    STATE_UNSPECIFIED = 0;
+    STATE_INITIALIZING = 1;
+    STATE_OK = 2;
+    STATE_WARNING = 3;
+    STATE_ERROR = 4;
+    STATE_CRITICAL = 5;
+  }
+  
+  State state = 1;
+  repeated string warnings = 2;  // Human-readable warnings
+  repeated string errors = 3;    // Human-readable errors
+}
+
+// Generic flight mode (protocol adapters translate to/from this)
+enum FlightMode {
+  FLIGHT_MODE_UNSPECIFIED = 0;
+  FLIGHT_MODE_MANUAL = 1;        // Direct pilot control
+  FLIGHT_MODE_STABILIZED = 2;    // Attitude stabilization
+  FLIGHT_MODE_ALTITUDE_HOLD = 3; // Hold altitude
+  FLIGHT_MODE_POSITION_HOLD = 4; // Hold position
+  FLIGHT_MODE_GUIDED = 5;        // Accepting position/velocity commands
+  FLIGHT_MODE_AUTO = 6;          // Following mission
+  FLIGHT_MODE_RETURN_HOME = 7;   // Return to launch
+  FLIGHT_MODE_LAND = 8;          // Landing
+  FLIGHT_MODE_TAKEOFF = 9;       // Taking off
+  FLIGHT_MODE_LOITER = 10;       // Circling current position
+}
+
+// Drone capabilities (what it can do)
+message Capabilities {
+  bool can_arm = 1;
+  bool can_takeoff = 2;
+  bool can_land = 3;
+  bool can_return_home = 4;
+  bool can_hold_position = 5;
+  bool can_follow_waypoints = 6;
+  bool can_stream_video = 7;
+  bool can_control_gimbal = 8;
+  
+  // Performance limits
+  double max_altitude_m = 20;
+  double max_speed_mps = 21;
+  double max_range_m = 22;
+  
+  // Supported flight modes
+  repeated FlightMode supported_modes = 30;
+}

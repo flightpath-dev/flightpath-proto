@@ -1,0 +1,162 @@
+syntax = "proto3";
+
+package drone.v1;
+
+import "drone/v1/types.proto";
+
+option go_package = "github.com/flightpath-dev/flightpath-proto/gen/go/drone/v1;dronev1";
+
+// MissionService handles autonomous missions
+service MissionService {
+  // Upload a mission to the drone
+  rpc UploadMission(UploadMissionRequest) returns (UploadMissionResponse);
+  
+  // Download current mission from drone
+  rpc DownloadMission(DownloadMissionRequest) returns (DownloadMissionResponse);
+  
+  // Start mission execution
+  rpc StartMission(StartMissionRequest) returns (StartMissionResponse);
+  
+  // Pause mission execution
+  rpc PauseMission(PauseMissionRequest) returns (PauseMissionResponse);
+  
+  // Resume mission execution
+  rpc ResumeMission(ResumeMissionRequest) returns (ResumeMissionResponse);
+  
+  // Clear mission from drone
+  rpc ClearMission(ClearMissionRequest) returns (ClearMissionResponse);
+  
+  // Get current mission progress
+  rpc GetProgress(GetProgressRequest) returns (GetProgressResponse);
+  
+  // Stream mission progress updates
+  rpc StreamProgress(StreamProgressRequest) returns (stream StreamProgressResponse);
+}
+
+message Waypoint {
+  int32 sequence = 1;
+  Position position = 2;
+  
+  enum Action {
+    ACTION_UNSPECIFIED = 0;
+    ACTION_WAYPOINT = 1;     // Fly through
+    ACTION_HOLD = 2;         // Hold position
+    ACTION_LAND = 3;         // Land here
+    ACTION_TAKEOFF = 4;      // Takeoff from here
+    ACTION_LOITER = 5;       // Circle around
+  }
+  Action action = 3;
+  
+  double speed = 4;            // m/s (0 = use default)
+  double heading = 5;          // degrees (-1 = auto)
+  int32 hold_time_sec = 6;     // seconds to hold
+  double acceptance_radius = 7; // meters
+}
+
+message Mission {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  repeated Waypoint waypoints = 4;
+  
+  int64 created_at = 10;
+  int64 updated_at = 11;
+}
+
+message UploadMissionRequest {
+  Mission mission = 1;
+}
+
+message UploadMissionResponse {
+  bool success = 1;
+  string message = 2;
+  int32 waypoints_uploaded = 3;
+}
+
+message DownloadMissionRequest {
+  // Empty - downloads current mission
+}
+
+message DownloadMissionResponse {
+  bool success = 1;
+  string message = 2;
+  Mission mission = 3;
+}
+
+message StartMissionRequest {
+  // Empty - starts uploaded mission
+}
+
+message StartMissionResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message PauseMissionRequest {
+  // Empty - pauses at current waypoint
+}
+
+message PauseMissionResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ResumeMissionRequest {
+  // Empty - resumes from current waypoint
+}
+
+message ResumeMissionResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ClearMissionRequest {
+  // Empty - clears uploaded mission
+}
+
+message ClearMissionResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message GetProgressRequest {
+  // Empty - gets current progress
+}
+
+message GetProgressResponse {
+  enum Status {
+    STATUS_UNSPECIFIED = 0;
+    STATUS_IDLE = 1;
+    STATUS_IN_PROGRESS = 2;
+    STATUS_PAUSED = 3;
+    STATUS_COMPLETED = 4;
+    STATUS_FAILED = 5;
+  }
+  
+  Status status = 1;
+  int32 current_waypoint = 2;
+  int32 total_waypoints = 3;
+  double distance_to_waypoint = 4;      // meters
+  double estimated_time_remaining = 5;  // seconds
+}
+
+message StreamProgressRequest {
+  int32 interval_ms = 1;  // Update interval
+}
+
+message StreamProgressResponse {
+  enum Status {
+    STATUS_UNSPECIFIED = 0;
+    STATUS_IDLE = 1;
+    STATUS_IN_PROGRESS = 2;
+    STATUS_PAUSED = 3;
+    STATUS_COMPLETED = 4;
+    STATUS_FAILED = 5;
+  }
+  
+  Status status = 1;
+  int32 current_waypoint = 2;
+  int32 total_waypoints = 3;
+  double distance_to_waypoint = 4;      // meters
+  double estimated_time_remaining = 5;  // seconds
+}

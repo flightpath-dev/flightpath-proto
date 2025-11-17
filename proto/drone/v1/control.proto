@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+package drone.v1;
+
+import "drone/v1/types.proto";
+
+option go_package = "github.com/flightpath-dev/flightpath-proto/gen/go/drone/v1;dronev1";
+
+// ControlService handles flight control commands
+service ControlService {
+  // Arm the drone
+  rpc Arm(ArmRequest) returns (ArmResponse);
+  
+  // Disarm the drone
+  rpc Disarm(DisarmRequest) returns (DisarmResponse);
+  
+  // Change flight mode
+  rpc SetFlightMode(SetFlightModeRequest) returns (SetFlightModeResponse);
+  
+  // Takeoff to specified altitude
+  rpc Takeoff(TakeoffRequest) returns (TakeoffResponse);
+  
+  // Land at current or specified position
+  rpc Land(LandRequest) returns (LandResponse);
+  
+  // Return to home/launch position
+  rpc ReturnHome(ReturnHomeRequest) returns (ReturnHomeResponse);
+  
+  // Go to specific position
+  rpc GoToPosition(GoToPositionRequest) returns (GoToPositionResponse);
+  
+  // Emergency stop
+  rpc EmergencyStop(EmergencyStopRequest) returns (EmergencyStopResponse);
+}
+
+message ArmRequest {
+  bool force = 1;  // Skip pre-arm checks (use with caution)
+}
+
+message ArmResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message DisarmRequest {
+  bool force = 1;  // Force disarm even in flight (dangerous!)
+}
+
+message DisarmResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message SetFlightModeRequest {
+  FlightMode mode = 1;
+}
+
+message SetFlightModeResponse {
+  bool success = 1;
+  string message = 2;
+  FlightMode current_mode = 3;
+}
+
+message TakeoffRequest {
+  double altitude = 1;  // Target altitude in meters
+}
+
+message TakeoffResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message LandRequest {
+  Position target = 1;  // Optional: specific landing location
+}
+
+message LandResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ReturnHomeRequest {
+  double altitude = 1;  // Optional: altitude for return flight
+}
+
+message ReturnHomeResponse {
+  bool success = 1;
+  string message = 2;
+  Position home_position = 3;
+}
+
+message GoToPositionRequest {
+  Position target = 1;
+  double speed = 2;       // Optional: speed in m/s
+  double heading = 3;     // Optional: desired heading in degrees
+}
+
+message GoToPositionResponse {
+  bool success = 1;
+  string message = 2;
+  double distance_m = 3;           // Distance to target
+  double estimated_time_sec = 4;   // Estimated time to reach
+}
+
+message EmergencyStopRequest {
+  // Empty - immediately stops all motors (drone will fall!)
+}
+
+message EmergencyStopResponse {
+  bool success = 1;
+  string message = 2;
+}

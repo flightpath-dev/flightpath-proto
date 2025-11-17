@@ -1,0 +1,16 @@
+# .gitignore
+
+node_modules
+
+# Buf generated files
+.buf/
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

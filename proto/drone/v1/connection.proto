@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package drone.v1;
+
+import "drone/v1/types.proto";
+
+option go_package = "github.com/flightpath-dev/flightpath-proto/gen/go/drone/v1;dronev1";
+
+// ConnectionService manages drone connections
+service ConnectionService {
+  // Connect to a drone by ID
+  rpc Connect(ConnectRequest) returns (ConnectResponse);
+  
+  // Disconnect from the current drone
+  rpc Disconnect(DisconnectRequest) returns (DisconnectResponse);
+  
+  // Get current connection status
+  rpc GetStatus(GetStatusRequest) returns (GetStatusResponse);
+  
+  // List all available drones
+  rpc ListDrones(ListDronesRequest) returns (ListDronesResponse);
+}
+
+message ConnectRequest {
+  string drone_id = 1;   // Required: Drone identifier from registry
+  int32 timeout_ms = 2;  // Optional: Connection timeout (default: 5000)
+  
+  // Optional: Override parameters (for development/testing only)
+  // Backend usually ignores this and uses registry configuration
+  map<string, string> parameters = 3;
+}
+
+message ConnectResponse {
+  bool success = 1;
+  string message = 2;
+  
+  // Drone information (if successful)
+  string drone_id = 3;
+  string drone_name = 4;
+  string manufacturer = 5;
+  string model = 6;
+  string serial_number = 7;
+  string firmware_version = 8;
+  
+  Capabilities capabilities = 9;
+}
+
+message DisconnectRequest {
+  // Empty - disconnects current drone
+}
+
+message DisconnectResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message GetStatusRequest {
+  // Empty - gets status of current connection
+}
+
+message GetStatusResponse {
+  bool connected = 1;
+  bool armed = 2;
+  FlightMode current_mode = 3;
+  SystemHealth health = 4;
+  
+  // Connection quality
+  int64 uptime_ms = 10;
+  int64 last_message_ms = 11;  // Time since last message
+  double link_quality = 12;     // 0.0 to 1.0
+}
+
+message ListDronesRequest {
+  // Empty - lists all configured drones
+}
+
+message ListDronesResponse {
+  repeated DroneInfo drones = 1;
+}
+
+message DroneInfo {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string protocol = 4;
+  bool available = 5;  // Is the drone available to connect?
+}

@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package drone.v1;
+
+import "drone/v1/types.proto";
+
+option go_package = "github.com/flightpath-dev/flightpath-proto/gen/go/drone/v1;dronev1";
+
+// TelemetryService provides real-time drone data
+service TelemetryService {
+  // Stream all telemetry data
+  rpc StreamTelemetry(StreamTelemetryRequest) returns (stream StreamTelemetryResponse);
+  
+  // Get current telemetry snapshot
+  rpc GetSnapshot(GetSnapshotRequest) returns (GetSnapshotResponse);
+}
+
+message StreamTelemetryRequest {
+  int32 rate_hz = 1;  // Desired update rate (backend decides actual rate)
+}
+
+message StreamTelemetryResponse {
+  int64 timestamp_ms = 1;
+  
+  Position position = 2;
+  Velocity velocity = 3;
+  Attitude attitude = 4;
+  BatteryStatus battery = 5;
+  SystemHealth health = 6;
+  
+  bool armed = 10;
+  FlightMode mode = 11;
+  double heading = 12;           // degrees
+  double ground_speed = 13;      // m/s
+  double vertical_speed = 14;    // m/s
+  
+  // Optional fields (may not be available on all drones)
+  double gps_accuracy = 20;      // meters
+  int32 satellite_count = 21;
+  double altitude_agl = 22;      // meters above ground level
+}
+
+message GetSnapshotRequest {
+  // Empty - gets current telemetry
+}
+
+message GetSnapshotResponse {
+  int64 timestamp_ms = 1;
+  
+  Position position = 2;
+  Velocity velocity = 3;
+  Attitude attitude = 4;
+  BatteryStatus battery = 5;
+  SystemHealth health = 6;
+  
+  bool armed = 10;
+  FlightMode mode = 11;
+  Position home_position = 12;
+  
+  Capabilities capabilities = 20;
+}
