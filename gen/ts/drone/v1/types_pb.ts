@@ -10,10 +10,10 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file drone/v1/types.proto.
  */
 export const file_drone_v1_types: GenFile = /*@__PURE__*/
-  fileDesc("ChRkcm9uZS92MS90eXBlcy5wcm90bxIIZHJvbmUudjEiQQoIUG9zaXRpb24SEAoIbGF0aXR1ZGUYASABKAESEQoJbG9uZ2l0dWRlGAIgASgBEhAKCGFsdGl0dWRlGAMgASgBIisKCFZlbG9jaXR5EgkKAXgYASABKAESCQoBeRgCIAEoARIJCgF6GAMgASgBIjQKCEF0dGl0dWRlEgwKBHJvbGwYASABKAESDQoFcGl0Y2gYAiABKAESCwoDeWF3GAMgASgBImEKDUJhdHRlcnlTdGF0dXMSDwoHdm9sdGFnZRgBIAEoARIPCgdjdXJyZW50GAIgASgBEhIKCnBlcmNlbnRhZ2UYAyABKAUSGgoSdGltZV9yZW1haW5pbmdfc2VjGAQgASgFItsBCgxTeXN0ZW1IZWFsdGgSKwoFc3RhdGUYASABKA4yHC5kcm9uZS52MS5TeXN0ZW1IZWFsdGguU3RhdGUSEAoId2FybmluZ3MYAiADKAkSDgoGZXJyb3JzGAMgAygJInwKBVN0YXRlEhUKEVNUQVRFX1VOU1BFQ0lGSUVEEAASFgoSU1RBVEVfSU5JVElBTElaSU5HEAESDAoIU1RBVEVfT0sQAhIRCg1TVEFURV9XQVJOSU5HEAMSDwoLU1RBVEVfRVJST1IQBBISCg5TVEFURV9DUklUSUNBTBAFIsECCgxDYXBhYmlsaXRpZXMSDwoHY2FuX2FybRgBIAEoCBITCgtjYW5fdGFrZW9mZhgCIAEoCBIQCghjYW5fbGFuZBgDIAEoCBIXCg9jYW5fcmV0dXJuX2hvbWUYBCABKAgSGQoRY2FuX2hvbGRfcG9zaXRpb24YBSABKAgSHAoUY2FuX2ZvbGxvd193YXlwb2ludHMYBiABKAgSGAoQY2FuX3N0cmVhbV92aWRlbxgHIAEoCBIaChJjYW5fY29udHJvbF9naW1iYWwYCCABKAgSFgoObWF4X2FsdGl0dWRlX20YFCABKAESFQoNbWF4X3NwZWVkX21wcxgVIAEoARITCgttYXhfcmFuZ2VfbRgWIAEoARItCg9zdXBwb3J0ZWRfbW9kZXMYHiADKA4yFC5kcm9uZS52MS5GbGlnaHRNb2RlKq0CCgpGbGlnaHRNb2RlEhsKF0ZMSUdIVF9NT0RFX1VOU1BFQ0lGSUVEEAASFgoSRkxJR0hUX01PREVfTUFOVUFMEAESGgoWRkxJR0hUX01PREVfU1RBQklMSVpFRBACEh0KGUZMSUdIVF9NT0RFX0FMVElUVURFX0hPTEQQAxIdChlGTElHSFRfTU9ERV9QT1NJVElPTl9IT0xEEAQSFgoSRkxJR0hUX01PREVfR1VJREVEEAUSFAoQRkxJR0hUX01PREVfQVVUTxAGEhsKF0ZMSUdIVF9NT0RFX1JFVFVSTl9IT01FEAcSFAoQRkxJR0hUX01PREVfTEFORBAIEhcKE0ZMSUdIVF9NT0RFX1RBS0VPRkYQCRIWChJGTElHSFRfTU9ERV9MT0lURVIQCkJEWkJnaXRodWIuY29tL2ZsaWdodHBhdGgtZGV2L2ZsaWdodHBhdGgtcHJvdG8vZ2VuL2dvL2Ryb25lL3YxO2Ryb25ldjFiBnByb3RvMw");
+  fileDesc("ChRkcm9uZS92MS90eXBlcy5wcm90bxIIZHJvbmUudjEiQQoIUG9zaXRpb24SEAoIbGF0aXR1ZGUYASABKAESEQoJbG9uZ2l0dWRlGAIgASgBEhAKCGFsdGl0dWRlGAMgASgBIisKCFZlbG9jaXR5EgkKAXgYASABKAESCQoBeRgCIAEoARIJCgF6GAMgASgBIjQKCEF0dGl0dWRlEgwKBHJvbGwYASABKAESDQoFcGl0Y2gYAiABKAESCwoDeWF3GAMgASgBIkQKDUJhdHRlcnlTdGF0dXMSDwoHdm9sdGFnZRgBIAEoARIPCgdjdXJyZW50GAIgASgBEhEKCXJlbWFpbmluZxgDIAEoBSIyCgxTeXN0ZW1IZWFsdGgSEgoKc2Vuc29yc19vaxgBIAEoCBIOCgZncHNfb2sYAiABKAgidAoMQ2FwYWJpbGl0aWVzEg8KB2hhc19ncHMYASABKAgSEwoLaGFzX2NvbXBhc3MYAiABKAgSEwoLY2FuX3Rha2VvZmYYAyABKAgSEAoIY2FuX2xhbmQYBCABKAgSFwoPY2FuX3JldHVybl9ob21lGAUgASgIKq0CCgpGbGlnaHRNb2RlEhsKF0ZMSUdIVF9NT0RFX1VOU1BFQ0lGSUVEEAASFgoSRkxJR0hUX01PREVfTUFOVUFMEAESGgoWRkxJR0hUX01PREVfU1RBQklMSVpFRBACEh0KGUZMSUdIVF9NT0RFX0FMVElUVURFX0hPTEQQAxIdChlGTElHSFRfTU9ERV9QT1NJVElPTl9IT0xEEAQSFgoSRkxJR0hUX01PREVfR1VJREVEEAUSFAoQRkxJR0hUX01PREVfQVVUTxAGEhsKF0ZMSUdIVF9NT0RFX1JFVFVSTl9IT01FEAcSFAoQRkxJR0hUX01PREVfTEFORBAIEhcKE0ZMSUdIVF9NT0RFX1RBS0VPRkYQCRIWChJGTElHSFRfTU9ERV9MT0lURVIQCkJEWkJnaXRodWIuY29tL2ZsaWdodHBhdGgtZGV2L2ZsaWdodHBhdGgtcHJvdG8vZ2VuL2dvL2Ryb25lL3YxO2Ryb25ldjFiBnByb3RvMw");
 
 /**
- * Position represents GPS coordinates
+ * Position represents a geographic location
  *
  * @generated from message drone.v1.Position
  */
@@ -33,7 +33,7 @@ export type Position = Message<"drone.v1.Position"> & {
   longitude: number;
 
   /**
-   * meters (MSL or AGL, protocol-specific)
+   * meters (MSL)
    *
    * @generated from field: double altitude = 3;
    */
@@ -48,27 +48,27 @@ export const PositionSchema: GenMessage<Position> = /*@__PURE__*/
   messageDesc(file_drone_v1_types, 0);
 
 /**
- * Velocity in local frame
+ * Velocity represents 3D velocity
  *
  * @generated from message drone.v1.Velocity
  */
 export type Velocity = Message<"drone.v1.Velocity"> & {
   /**
-   * m/s (north or forward, protocol-specific)
+   * m/s (north in NED frame, forward in body frame)
    *
    * @generated from field: double x = 1;
    */
   x: number;
 
   /**
-   * m/s (east or right, protocol-specific)
+   * m/s (east in NED frame, right in body frame)
    *
    * @generated from field: double y = 2;
    */
   y: number;
 
   /**
-   * m/s (down or up, protocol-specific)
+   * m/s (down in NED frame, down in body frame)
    *
    * @generated from field: double z = 3;
    */
@@ -103,7 +103,7 @@ export type Attitude = Message<"drone.v1.Attitude"> & {
   pitch: number;
 
   /**
-   * radians (heading)
+   * radians
    *
    * @generated from field: double yaw = 3;
    */
@@ -118,7 +118,7 @@ export const AttitudeSchema: GenMessage<Attitude> = /*@__PURE__*/
   messageDesc(file_drone_v1_types, 2);
 
 /**
- * Battery information
+ * BatteryStatus represents battery state
  *
  * @generated from message drone.v1.BatteryStatus
  */
@@ -131,25 +131,18 @@ export type BatteryStatus = Message<"drone.v1.BatteryStatus"> & {
   voltage: number;
 
   /**
-   * amps (negative = discharging)
+   * amps
    *
    * @generated from field: double current = 2;
    */
   current: number;
 
   /**
-   * 0-100
+   * percent (0-100)
    *
-   * @generated from field: int32 percentage = 3;
+   * @generated from field: int32 remaining = 3;
    */
-  percentage: number;
-
-  /**
-   * -1 if unknown
-   *
-   * @generated from field: int32 time_remaining_sec = 4;
-   */
-  timeRemainingSec: number;
+  remaining: number;
 };
 
 /**
@@ -160,29 +153,24 @@ export const BatteryStatusSchema: GenMessage<BatteryStatus> = /*@__PURE__*/
   messageDesc(file_drone_v1_types, 3);
 
 /**
- * Generic system health
+ * SystemHealth represents system health status
  *
  * @generated from message drone.v1.SystemHealth
  */
 export type SystemHealth = Message<"drone.v1.SystemHealth"> & {
   /**
-   * @generated from field: drone.v1.SystemHealth.State state = 1;
+   * all critical sensors healthy
+   *
+   * @generated from field: bool sensors_ok = 1;
    */
-  state: SystemHealth_State;
+  sensorsOk: boolean;
 
   /**
-   * Human-readable warnings
+   * GPS locked with sufficient satellites
    *
-   * @generated from field: repeated string warnings = 2;
+   * @generated from field: bool gps_ok = 2;
    */
-  warnings: string[];
-
-  /**
-   * Human-readable errors
-   *
-   * @generated from field: repeated string errors = 3;
-   */
-  errors: string[];
+  gpsOk: boolean;
 };
 
 /**
@@ -193,115 +181,35 @@ export const SystemHealthSchema: GenMessage<SystemHealth> = /*@__PURE__*/
   messageDesc(file_drone_v1_types, 4);
 
 /**
- * @generated from enum drone.v1.SystemHealth.State
- */
-export enum SystemHealth_State {
-  /**
-   * @generated from enum value: STATE_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * @generated from enum value: STATE_INITIALIZING = 1;
-   */
-  INITIALIZING = 1,
-
-  /**
-   * @generated from enum value: STATE_OK = 2;
-   */
-  OK = 2,
-
-  /**
-   * @generated from enum value: STATE_WARNING = 3;
-   */
-  WARNING = 3,
-
-  /**
-   * @generated from enum value: STATE_ERROR = 4;
-   */
-  ERROR = 4,
-
-  /**
-   * @generated from enum value: STATE_CRITICAL = 5;
-   */
-  CRITICAL = 5,
-}
-
-/**
- * Describes the enum drone.v1.SystemHealth.State.
- */
-export const SystemHealth_StateSchema: GenEnum<SystemHealth_State> = /*@__PURE__*/
-  enumDesc(file_drone_v1_types, 4, 0);
-
-/**
- * Drone capabilities (what it can do)
+ * Capabilities represents drone capabilities
  *
  * @generated from message drone.v1.Capabilities
  */
 export type Capabilities = Message<"drone.v1.Capabilities"> & {
   /**
-   * @generated from field: bool can_arm = 1;
+   * @generated from field: bool has_gps = 1;
    */
-  canArm: boolean;
+  hasGps: boolean;
 
   /**
-   * @generated from field: bool can_takeoff = 2;
+   * @generated from field: bool has_compass = 2;
+   */
+  hasCompass: boolean;
+
+  /**
+   * @generated from field: bool can_takeoff = 3;
    */
   canTakeoff: boolean;
 
   /**
-   * @generated from field: bool can_land = 3;
+   * @generated from field: bool can_land = 4;
    */
   canLand: boolean;
 
   /**
-   * @generated from field: bool can_return_home = 4;
+   * @generated from field: bool can_return_home = 5;
    */
   canReturnHome: boolean;
-
-  /**
-   * @generated from field: bool can_hold_position = 5;
-   */
-  canHoldPosition: boolean;
-
-  /**
-   * @generated from field: bool can_follow_waypoints = 6;
-   */
-  canFollowWaypoints: boolean;
-
-  /**
-   * @generated from field: bool can_stream_video = 7;
-   */
-  canStreamVideo: boolean;
-
-  /**
-   * @generated from field: bool can_control_gimbal = 8;
-   */
-  canControlGimbal: boolean;
-
-  /**
-   * Performance limits
-   *
-   * @generated from field: double max_altitude_m = 20;
-   */
-  maxAltitudeM: number;
-
-  /**
-   * @generated from field: double max_speed_mps = 21;
-   */
-  maxSpeedMps: number;
-
-  /**
-   * @generated from field: double max_range_m = 22;
-   */
-  maxRangeM: number;
-
-  /**
-   * Supported flight modes
-   *
-   * @generated from field: repeated drone.v1.FlightMode supported_modes = 30;
-   */
-  supportedModes: FlightMode[];
 };
 
 /**
@@ -312,7 +220,7 @@ export const CapabilitiesSchema: GenMessage<Capabilities> = /*@__PURE__*/
   messageDesc(file_drone_v1_types, 5);
 
 /**
- * Generic flight mode (protocol adapters translate to/from this)
+ * FlightMode represents the current flight mode
  *
  * @generated from enum drone.v1.FlightMode
  */
@@ -323,71 +231,51 @@ export enum FlightMode {
   UNSPECIFIED = 0,
 
   /**
-   * Direct pilot control
-   *
    * @generated from enum value: FLIGHT_MODE_MANUAL = 1;
    */
   MANUAL = 1,
 
   /**
-   * Attitude stabilization
-   *
    * @generated from enum value: FLIGHT_MODE_STABILIZED = 2;
    */
   STABILIZED = 2,
 
   /**
-   * Hold altitude
-   *
    * @generated from enum value: FLIGHT_MODE_ALTITUDE_HOLD = 3;
    */
   ALTITUDE_HOLD = 3,
 
   /**
-   * Hold position
-   *
    * @generated from enum value: FLIGHT_MODE_POSITION_HOLD = 4;
    */
   POSITION_HOLD = 4,
 
   /**
-   * Accepting position/velocity commands
-   *
    * @generated from enum value: FLIGHT_MODE_GUIDED = 5;
    */
   GUIDED = 5,
 
   /**
-   * Following mission
-   *
    * @generated from enum value: FLIGHT_MODE_AUTO = 6;
    */
   AUTO = 6,
 
   /**
-   * Return to launch
-   *
    * @generated from enum value: FLIGHT_MODE_RETURN_HOME = 7;
    */
   RETURN_HOME = 7,
 
   /**
-   * Landing
-   *
    * @generated from enum value: FLIGHT_MODE_LAND = 8;
    */
   LAND = 8,
 
   /**
-   * Taking off
-   *
    * @generated from enum value: FLIGHT_MODE_TAKEOFF = 9;
    */
   TAKEOFF = 9,
 
   /**
-   * Circling current position
-   *
    * @generated from enum value: FLIGHT_MODE_LOITER = 10;
    */
   LOITER = 10,

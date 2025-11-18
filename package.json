@@ -1,6 +1,6 @@
 {
   "name": "@flightpath/flightpath-proto",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Protocol Buffer definitions and generated TypeScript/JavaScript code for the Flightpath drone control platform",
   "type": "module",
   "files": [

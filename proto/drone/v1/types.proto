@@ -4,82 +4,60 @@ package drone.v1;
 
 option go_package = "github.com/flightpath-dev/flightpath-proto/gen/go/drone/v1;dronev1";
 
-// Position represents GPS coordinates
+// Position represents a geographic location
 message Position {
   double latitude = 1;   // degrees
   double longitude = 2;  // degrees
-  double altitude = 3;   // meters (MSL or AGL, protocol-specific)
+  double altitude = 3;   // meters (MSL)
 }
 
-// Velocity in local frame
+// Velocity represents 3D velocity
 message Velocity {
-  double x = 1;  // m/s (north or forward, protocol-specific)
-  double y = 2;  // m/s (east or right, protocol-specific)
-  double z = 3;  // m/s (down or up, protocol-specific)
+  double x = 1;  // m/s (north in NED frame, forward in body frame)
+  double y = 2;  // m/s (east in NED frame, right in body frame)
+  double z = 3;  // m/s (down in NED frame, down in body frame)
 }
 
 // Attitude represents orientation
 message Attitude {
   double roll = 1;   // radians
   double pitch = 2;  // radians
-  double yaw = 3;    // radians (heading)
+  double yaw = 3;    // radians
 }
 
-// Battery information
+// BatteryStatus represents battery state
 message BatteryStatus {
-  double voltage = 1;           // volts
-  double current = 2;           // amps (negative = discharging)
-  int32 percentage = 3;         // 0-100
-  int32 time_remaining_sec = 4; // -1 if unknown
+  double voltage = 1;   // volts
+  double current = 2;   // amps
+  int32 remaining = 3;  // percent (0-100)
 }
 
-// Generic system health
+// SystemHealth represents system health status
 message SystemHealth {
-  enum State {
-    STATE_UNSPECIFIED = 0;
-    STATE_INITIALIZING = 1;
-    STATE_OK = 2;
-    STATE_WARNING = 3;
-    STATE_ERROR = 4;
-    STATE_CRITICAL = 5;
-  }
-  
-  State state = 1;
-  repeated string warnings = 2;  // Human-readable warnings
-  repeated string errors = 3;    // Human-readable errors
+  bool sensors_ok = 1;  // all critical sensors healthy
+  bool gps_ok = 2;      // GPS locked with sufficient satellites
 }
 
-// Generic flight mode (protocol adapters translate to/from this)
+// Capabilities represents drone capabilities
+message Capabilities {
+  bool has_gps = 1;
+  bool has_compass = 2;
+  bool can_takeoff = 3;
+  bool can_land = 4;
+  bool can_return_home = 5;
+}
+
+// FlightMode represents the current flight mode
 enum FlightMode {
   FLIGHT_MODE_UNSPECIFIED = 0;
-  FLIGHT_MODE_MANUAL = 1;        // Direct pilot control
-  FLIGHT_MODE_STABILIZED = 2;    // Attitude stabilization
-  FLIGHT_MODE_ALTITUDE_HOLD = 3; // Hold altitude
-  FLIGHT_MODE_POSITION_HOLD = 4; // Hold position
-  FLIGHT_MODE_GUIDED = 5;        // Accepting position/velocity commands
-  FLIGHT_MODE_AUTO = 6;          // Following mission
-  FLIGHT_MODE_RETURN_HOME = 7;   // Return to launch
-  FLIGHT_MODE_LAND = 8;          // Landing
-  FLIGHT_MODE_TAKEOFF = 9;       // Taking off
-  FLIGHT_MODE_LOITER = 10;       // Circling current position
-}
-
-// Drone capabilities (what it can do)
-message Capabilities {
-  bool can_arm = 1;
-  bool can_takeoff = 2;
-  bool can_land = 3;
-  bool can_return_home = 4;
-  bool can_hold_position = 5;
-  bool can_follow_waypoints = 6;
-  bool can_stream_video = 7;
-  bool can_control_gimbal = 8;
-  
-  // Performance limits
-  double max_altitude_m = 20;
-  double max_speed_mps = 21;
-  double max_range_m = 22;
-  
-  // Supported flight modes
-  repeated FlightMode supported_modes = 30;
+  FLIGHT_MODE_MANUAL = 1;
+  FLIGHT_MODE_STABILIZED = 2;
+  FLIGHT_MODE_ALTITUDE_HOLD = 3;
+  FLIGHT_MODE_POSITION_HOLD = 4;
+  FLIGHT_MODE_GUIDED = 5;
+  FLIGHT_MODE_AUTO = 6;
+  FLIGHT_MODE_RETURN_HOME = 7;
+  FLIGHT_MODE_LAND = 8;
+  FLIGHT_MODE_TAKEOFF = 9;
+  FLIGHT_MODE_LOITER = 10;
 }
